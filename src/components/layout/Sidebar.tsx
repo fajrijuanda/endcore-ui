@@ -45,9 +45,15 @@ export default function Sidebar() {
     return (
         <aside
             className={cn(
-                "h-full transition-all duration-300 ease-in-out bg-white/70 dark:bg-zinc-900/70 backdrop-blur-2xl shadow-xl flex flex-col rounded-[2rem] border border-white/20 dark:border-white/10 overflow-hidden",
+                "h-full transition-all duration-300 ease-in-out shadow-xl flex flex-col rounded-[2rem] border overflow-hidden",
                 collapsed ? "w-[80px]" : "w-[280px]"
             )}
+            style={{
+                backgroundColor: 'var(--background-glass)',
+                backdropFilter: 'var(--backdrop-filter)',
+                WebkitBackdropFilter: 'var(--backdrop-filter)',
+                borderColor: 'var(--border-glass)',
+            }}
         >
             <div className="flex items-center gap-3 p-6 h-20">
                 <div className="relative w-10 h-10 shrink-0">

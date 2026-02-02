@@ -4,6 +4,11 @@
 
 @layer base {
   :root {
+    /* Glassmorphism Primitives */
+    --background-glass: rgba(255, 255, 255, 0.7);
+    --backdrop-filter: blur(16px) saturate(150%);
+    --border-glass: rgba(0, 0, 0, 0.1);
+
     --background: 0 0% 98%;
     --foreground: 240 10% 3.9%;
 
@@ -15,8 +20,6 @@
 
     --primary: 60 100% 50%;
     /* #FFFF00 */
-    /* Vibrant Yellow */
-    /* Electric Yellow */
     --primary-foreground: 26 83.3% 14.1%;
 
     --secondary: 210 40% 96.1%;
@@ -39,6 +42,11 @@
   }
 
   .dark {
+    /* Glassmorphism Primitives Overrides */
+    --background-glass: rgba(0, 0, 0, 0.7);
+    --backdrop-filter: blur(16px) saturate(180%);
+    --border-glass: rgba(255, 255, 255, 0.08);
+
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
 
@@ -48,7 +56,8 @@
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 47.9 95.8% 53.1%;
+    --primary: 60 100% 50%;
+    /* #FFFF00 */
     --primary-foreground: 26 83.3% 14.1%;
 
     --secondary: 240 3.7% 15.9%;
@@ -65,7 +74,7 @@
 
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 47.9 95.8% 53.1%;
+    --ring: 60 100% 50%;
   }
 }
 

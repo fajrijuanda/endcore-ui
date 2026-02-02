@@ -19,7 +19,15 @@ export default function AppLayout({
                 <Sidebar />
             </div>
 
-            <div className="relative z-10 flex-1 flex flex-col h-full rounded-[2rem] border border-white/20 dark:border-white/10 bg-white/70 dark:bg-zinc-900/70 backdrop-blur-2xl shadow-xl overflow-hidden transition-all">
+            <div
+                className="relative z-10 flex-1 flex flex-col h-full rounded-[2rem] border shadow-xl overflow-hidden transition-all"
+                style={{
+                    backgroundColor: 'var(--background-glass)',
+                    backdropFilter: 'var(--backdrop-filter)',
+                    WebkitBackdropFilter: 'var(--backdrop-filter)',
+                    borderColor: 'var(--border-glass)',
+                }}
+            >
                 <Header />
                 <main className="flex-1 p-6 md:p-8 overflow-auto">
                     {children}
