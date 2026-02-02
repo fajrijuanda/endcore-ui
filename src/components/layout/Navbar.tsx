@@ -13,7 +13,7 @@ export const Navbar = () => {
 
     return (
         <nav
-            className="sticky top-4 z-50 mx-4 md:mx-auto max-w-7xl rounded-2xl border transition-all duration-300"
+            className="sticky top-4 z-50 mx-auto w-[95%] rounded-2xl border transition-all duration-300"
             style={{
                 backgroundColor: 'var(--background-glass)',
                 backdropFilter: 'var(--backdrop-filter)',

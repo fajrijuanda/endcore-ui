@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { EndcoreCard } from "@/components/ui/EndcoreCard";
-import { ArrowRight, Box, Hexagon, Layers, Shield, Zap, Globe, Github } from "lucide-react";
+import { ArrowRight, Box, Hexagon, Shield, Globe, Github } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -18,7 +18,7 @@ export default function LandingPage() {
       <Navbar />
 
       {/* Main Floating Content Wrapper */}
-      <main className="relative z-10 container mx-auto px-4 pt-6 pb-12">
+      <main className="relative z-10 w-full max-w-[95%] mx-auto pt-6 pb-12">
         <div
           className="flex flex-col rounded-[2.5rem] overflow-hidden border transition-all duration-300 shadow-xl"
           style={{
@@ -30,7 +30,7 @@ export default function LandingPage() {
         >
 
           {/* Hero Section */}
-          <section className="flex flex-col items-center justify-center min-h-[70vh] text-center space-y-8 px-6 py-20">
+          <section className="flex flex-col items-center justify-center min-h-[70vh] text-center space-y-8 px-6 py-12">
             <div className="relative mb-4">
               <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
               <Image
