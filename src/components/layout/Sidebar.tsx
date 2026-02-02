@@ -56,7 +56,7 @@ export default function Sidebar() {
             }}
         >
             <div className="flex items-center gap-3 p-6 h-20">
-                <div className="relative w-10 h-10 shrink-0">
+                <div className="relative w-14 h-14 shrink-0">
                     {mounted ? (
                         <Image
                             src={theme === 'dark' ? "/logo-dark.png" : "/logo.png"}

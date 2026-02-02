@@ -25,7 +25,7 @@ export const Navbar = () => {
             <div className="flex items-center justify-between px-6 py-3">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2">
-                    <div className="relative w-8 h-8">
+                    <div className="relative w-12 h-12">
                         <Image
                             src="/logo.png"
                             alt="Endcore"
