@@ -13,7 +13,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 45 100% 50%;
+    --primary: 60 100% 50%;
+    /* #FFFF00 */
     /* Vibrant Yellow */
     /* Electric Yellow */
     --primary-foreground: 26 83.3% 14.1%;
