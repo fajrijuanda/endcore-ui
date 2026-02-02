@@ -8,6 +8,9 @@ export default function LandingPage() {
 
       {/* Hero Section */}
       <section className="space-y-6 max-w-3xl mx-auto">
+        <div className="flex justify-center mb-4">
+          <img src="/logo.png" alt="Endcore Logo" className="w-32 h-32 drop-shadow-[0_0_15px_rgba(255,255,0,0.5)]" />
+        </div>
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-primary">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
