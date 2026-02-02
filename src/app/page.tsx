@@ -36,8 +36,8 @@ export default function LandingPage() {
               <Image
                 src="/logo.png"
                 alt="Endcore Logo"
-                width={140}
-                height={140}
+                width={100}
+                height={100}
                 className="relative z-10 drop-shadow-[0_0_25px_rgba(255,215,0,0.6)]"
               />
             </div>
