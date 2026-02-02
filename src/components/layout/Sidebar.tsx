@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
     LayoutDashboard,
     ShoppingBag,
@@ -12,13 +12,13 @@ import {
     ChevronRight,
     Users,
     Table,
-    LayoutList,
-    Box
+    LayoutList
 } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import { useTheme } from 'next-themes';
 
 const sidebarItems = [
     { name: 'Dashboard', icon: LayoutDashboard, href: '/dashboard' },
@@ -35,6 +35,13 @@ export default function Sidebar() {
     const [collapsed, setCollapsed] = useState(false);
     const pathname = usePathname();
 
+    const { theme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    React.useEffect(() => {
+        setMounted(true);
+    }, []);
+
     return (
         <aside
             className={cn(
@@ -44,7 +51,16 @@ export default function Sidebar() {
         >
             <div className="flex items-center gap-3 p-6 h-20">
                 <div className="relative w-10 h-10 shrink-0">
-                    <Image src="/logo.png" alt="Logo" fill className="object-contain" />
+                    {mounted ? (
+                        <Image
+                            src={theme === 'dark' ? "/logo-dark.png" : "/logo.png"}
+                            alt="Logo"
+                            fill
+                            className="object-contain"
+                        />
+                    ) : (
+                        <div className="w-10 h-10 bg-primary/10 rounded-full animate-pulse" />
+                    )}
                 </div>
                 {!collapsed && (
                     <motion.div
