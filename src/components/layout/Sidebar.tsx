@@ -20,15 +20,35 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 
-const sidebarItems = [
-    { name: 'Dashboard', icon: LayoutDashboard, href: '/dashboard' },
-    { name: 'Components', icon: Layers, href: '/components' },
-    { name: 'Widgets', icon: LayoutList, href: '/widgets' },
-    { name: 'Forms', icon: FileText, href: '/forms' },
-    { name: 'Tables', icon: Table, href: '/tables' },
-    { name: 'Shop', icon: ShoppingBag, href: '/ecommerce' },
-    { name: 'Users', icon: Users, href: '/crm' },
-    { name: 'Settings', icon: Settings, href: '/system' },
+const sidebarGroups = [
+    {
+        group: 'OVERVIEW',
+        items: [
+            { name: 'Dashboard', icon: LayoutDashboard, href: '/dashboard' },
+        ]
+    },
+    {
+        group: 'TACTICAL MODULES',
+        items: [
+            { name: 'Components', icon: Layers, href: '/components' },
+            { name: 'Widgets', icon: LayoutList, href: '/widgets' },
+            { name: 'Forms', icon: FileText, href: '/forms' },
+            { name: 'Tables', icon: Table, href: '/tables' },
+        ]
+    },
+    {
+        group: 'SYSTEM APPS',
+        items: [
+            { name: 'Shop', icon: ShoppingBag, href: '/ecommerce' },
+            { name: 'Users', icon: Users, href: '/crm' },
+        ]
+    },
+    {
+        group: 'INFRASTRUCTURE',
+        items: [
+            { name: 'Settings', icon: Settings, href: '/system' },
+        ]
+    }
 ];
 
 export default function Sidebar() {
@@ -81,44 +101,62 @@ export default function Sidebar() {
             </div>
 
             {/* Navigation */}
-            <nav className="flex-1 px-4 space-y-2 py-4 overflow-y-auto overflow-x-hidden">
-                {sidebarItems.map((item) => {
-                    const isActive = pathname === item.href;
-                    return (
-                        <Link
-                            key={item.href}
-                            href={item.href}
-                            className={cn(
-                                "flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-200 group relative",
-                                isActive
-                                    ? "bg-primary text-primary-foreground shadow-md shadow-primary/20"
-                                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
-                            )}
-                        >
-                            <item.icon size={22} className={cn("shrink-0", isActive ? "text-primary-foreground" : "text-muted-foreground group-hover:text-black dark:group-hover:text-primary")} />
-
-                            {!collapsed && (
-                                <span className="font-medium truncate">
-                                    {item.name}
-                                </span>
-                            )}
-
-                            {/* Tooltip for collapsed mode */}
-                            {collapsed && (
-                                <div className="absolute left-full ml-2 px-2 py-1 bg-popover text-popover-foreground text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-sm border border-border z-50">
-                                    {item.name}
+            <nav className="flex-1 px-4 py-4 overflow-y-auto overflow-x-hidden custom-scrollbar">
+                <div className="space-y-6">
+                    {sidebarGroups.map((group, idx) => (
+                        <div key={idx} className="space-y-2">
+                            {collapsed ? (
+                                <div className="h-[1px] bg-border mx-2 my-4 opacity-50" />
+                            ) : (
+                                <div className="px-3">
+                                    <span className="text-[10px] font-black tracking-[0.2em] text-zinc-400/70 dark:text-zinc-500/50 uppercase font-mono">
+                                        {group.group}
+                                    </span>
                                 </div>
                             )}
 
-                            {isActive && !collapsed && (
-                                <motion.div
-                                    layoutId="activeTab"
-                                    className="absolute right-2 w-1.5 h-1.5 rounded-full bg-white/50"
-                                />
-                            )}
-                        </Link>
-                    );
-                })}
+                            <div className="space-y-1">
+                                {group.items.map((item) => {
+                                    const isActive = pathname === item.href;
+                                    return (
+                                        <Link
+                                            key={item.href}
+                                            href={item.href}
+                                            className={cn(
+                                                "flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-200 group relative",
+                                                isActive
+                                                    ? "bg-primary text-primary-foreground shadow-md shadow-primary/20"
+                                                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                                            )}
+                                        >
+                                            <item.icon size={20} className={cn("shrink-0", isActive ? "text-primary-foreground" : "text-muted-foreground group-hover:text-black dark:group-hover:text-primary")} />
+
+                                            {!collapsed && (
+                                                <span className="font-medium truncate text-sm">
+                                                    {item.name}
+                                                </span>
+                                            )}
+
+                                            {/* Tooltip for collapsed mode */}
+                                            {collapsed && (
+                                                <div className="absolute left-full ml-2 px-2 py-1 bg-popover text-popover-foreground text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-sm border border-border z-50">
+                                                    {item.name}
+                                                </div>
+                                            )}
+
+                                            {isActive && !collapsed && (
+                                                <motion.div
+                                                    layoutId="activeTab"
+                                                    className="absolute right-2 w-1 h-1 rounded-full bg-white/50"
+                                                />
+                                            )}
+                                        </Link>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </nav>
 
             {/* Collapse Toggle */}
