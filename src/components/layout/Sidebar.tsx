@@ -45,7 +45,7 @@ export default function Sidebar() {
     return (
         <aside
             className={cn(
-                "h-full transition-all duration-300 ease-in-out bg-card shadow-sm flex flex-col rounded-[2rem] border border-white/10 overflow-hidden",
+                "h-full transition-all duration-300 ease-in-out bg-white/70 dark:bg-zinc-900/70 backdrop-blur-2xl shadow-xl flex flex-col rounded-[2rem] border border-white/20 dark:border-white/10 overflow-hidden",
                 collapsed ? "w-[80px]" : "w-[280px]"
             )}
         >
