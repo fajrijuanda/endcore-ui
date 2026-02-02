@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen w-full relative overflow-x-hidden bg-[#f0f0f3] dark:bg-zinc-900 transition-colors duration-300">
+    <div className="h-screen w-full relative bg-[#f0f0f3] dark:bg-zinc-900 transition-colors duration-300 overflow-hidden flex flex-col p-6 md:p-8 gap-6 md:gap-8">
       {/* Abstract Background (Fixed) */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-primary/20 rounded-full blur-[150px] mix-blend-multiply dark:mix-blend-screen" />
@@ -14,23 +14,24 @@ export default function LandingPage() {
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5 dark:opacity-10" />
       </div>
 
-      {/* Floating Navbar */}
-      <Navbar />
+      {/* Header / Navbar Wrapper */}
+      <header className="relative z-50 shrink-0">
+        <Navbar />
+      </header>
 
-      {/* Main Floating Content Wrapper */}
-      <main className="relative z-10 w-full max-w-[95%] mx-auto mt-8 pb-6 h-[calc(100vh-150px)] overflow-y-auto custom-scrollbar">
-        <div
-          className="flex flex-col rounded-[2.5rem] overflow-hidden border transition-all duration-300 shadow-xl"
-          style={{
-            backgroundColor: 'var(--background-glass)',
-            backdropFilter: 'var(--backdrop-filter)',
-            WebkitBackdropFilter: 'var(--backdrop-filter)',
-            borderColor: 'var(--border-glass)',
-          }}
-        >
-
+      {/* Main Floating Content Wrapper (Card) */}
+      <main className="relative z-10 flex-1 min-h-0 w-full rounded-[2.5rem] overflow-hidden border transition-all duration-300 shadow-xl flex flex-col"
+        style={{
+          backgroundColor: 'var(--background-glass)',
+          backdropFilter: 'var(--backdrop-filter)',
+          WebkitBackdropFilter: 'var(--backdrop-filter)',
+          borderColor: 'var(--border-glass)',
+        }}
+      >
+        {/* Scrollable Content Area */}
+        <div className="flex-1 overflow-y-auto custom-scrollbar">
           {/* Hero Section */}
-          <section className="flex flex-col items-center justify-center min-h-[70vh] text-center space-y-8 px-6 py-12">
+          <section className="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-8 px-6 py-12">
             <div className="relative mb-4">
               <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
               <Image
@@ -135,24 +136,24 @@ export default function LandingPage() {
               </div>
             </div>
           </section>
-
-          {/* Footer */}
-          <footer className="py-12 px-6 border-t border-dashed border-zinc-200 dark:border-white/5 bg-white/50 dark:bg-black/20">
-            <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-              <div className="flex items-center gap-2">
-                <Image src="/logo.png" alt="Logo" width={24} height={24} className="opacity-80" />
-                <span className="text-sm font-bold text-foreground">ENDCORE SYSTEMS</span>
-              </div>
-              <div className="text-xs text-zinc-500">
-                © 2026 Endcore UI. All systems operational.
-              </div>
-              <div className="flex gap-4">
-                <Github className="w-5 h-5 text-zinc-400 hover:text-foreground cursor-pointer transition-colors" />
-                <Globe className="w-5 h-5 text-zinc-400 hover:text-foreground cursor-pointer transition-colors" />
-              </div>
-            </div>
-          </footer>
         </div>
+
+        {/* Footer (Fixed inside Card) */}
+        <footer className="py-8 px-6 border-t border-dashed border-zinc-200 dark:border-white/5 bg-white/50 dark:bg-black/20 shrink-0">
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="flex items-center gap-2">
+              <Image src="/logo.png" alt="Logo" width={24} height={24} className="opacity-80" />
+              <span className="text-sm font-bold text-foreground">ENDCORE SYSTEMS</span>
+            </div>
+            <div className="text-xs text-zinc-500">
+              © 2026 Endcore UI. All systems operational.
+            </div>
+            <div className="flex gap-4">
+              <Github className="w-5 h-5 text-zinc-400 hover:text-foreground cursor-pointer transition-colors" />
+              <Globe className="w-5 h-5 text-zinc-400 hover:text-foreground cursor-pointer transition-colors" />
+            </div>
+          </div>
+        </footer>
       </main>
     </div>
   );
