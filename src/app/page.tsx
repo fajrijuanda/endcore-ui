@@ -28,7 +28,7 @@ export default function LandingPage() {
         </div>
 
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-white">
-          The <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-white">Endcore</span> UI.
+          The <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-black dark:to-white">Endcore</span> UI.
         </h1>
 
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
