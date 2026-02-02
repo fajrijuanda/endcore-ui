@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { Home, Users, ShoppingCart, Settings, Layout, Menu, LayoutList, KanbanSquare, Lock, Layers } from 'lucide-react';
+import { Home, Users, ShoppingCart, Settings, Menu, LayoutList, KanbanSquare, Lock, Layers, FileText, Table } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
@@ -16,6 +16,8 @@ const navItems = [
     { name: 'System', icon: Settings, href: '/system' },
     { name: 'Components', icon: Layers, href: '/components' },
     { name: 'Widgets', icon: LayoutList, href: '/widgets' },
+    { name: 'Forms', icon: FileText, href: '/forms' },
+    { name: 'Tables', icon: Table, href: '/tables' },
     { name: 'Auth', icon: Lock, href: '/auth/login' },
 ];
 
