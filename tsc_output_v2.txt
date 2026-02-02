@@ -1,0 +1,4 @@
+src/app/(app)/components/accordion/page.tsx(40,36): error TS1003: Identifier expected.
+src/app/(app)/components/accordion/page.tsx(40,38): error TS1351: An identifier or keyword cannot immediately follow a numeric literal.
+src/app/(app)/components/collapsible/page.tsx(51,33): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+src/app/(app)/components/collapsible/page.tsx(54,33): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?

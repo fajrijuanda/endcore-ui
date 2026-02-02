@@ -28,7 +28,7 @@ export default function AppLayout({
                 }}
             >
                 <Header />
-                <main className="flex-1 p-6 md:p-8 overflow-auto">
+                <main className="flex-1 p-6 md:p-8 overflow-auto no-scrollbar">
                     {children}
                 </main>
             </div>

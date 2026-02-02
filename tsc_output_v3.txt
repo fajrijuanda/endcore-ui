@@ -1,0 +1,11 @@
+src/app/(app)/components/alert-dialog/page.tsx(28,62): error TS2322: Type '"destructive"' is not assignable to type '"active" | "warning" | "critical" | "neutral" | undefined'.
+src/app/(app)/components/alert/page.tsx(39,56): error TS2322: Type '"destructive"' is not assignable to type '"active" | "warning" | "critical" | "neutral" | undefined'.
+src/app/(app)/components/breadcrumb/page.tsx(11,8): error TS2307: Cannot find module '@/components/ui/breadcrumb' or its corresponding type declarations.
+src/app/(app)/components/carousel/page.tsx(10,8): error TS2307: Cannot find module '@/components/ui/carousel' or its corresponding type declarations.
+src/app/(app)/components/chart/page.tsx(9,8): error TS2307: Cannot find module '@/components/ui/chart' or its corresponding type declarations.
+src/app/(app)/components/chart/page.tsx(10,53): error TS2307: Cannot find module 'recharts' or its corresponding type declarations.
+src/app/(app)/components/chart/page.tsx(53,49): error TS7006: Parameter 'value' implicitly has an 'any' type.
+src/app/(app)/components/input-otp/page.tsx(10,8): error TS2307: Cannot find module '@/components/ui/input-otp' or its corresponding type declarations.
+src/app/(app)/components/pagination/page.tsx(12,8): error TS2307: Cannot find module '@/components/ui/pagination' or its corresponding type declarations.
+src/app/(app)/components/resizable/page.tsx(8,8): error TS2307: Cannot find module '@/components/ui/resizable' or its corresponding type declarations.
+src/app/(app)/components/toggle/page.tsx(5,41): error TS2724: '"lucide-react"' has no exported member named 'ShieldOpen'. Did you mean 'ShieldIcon'?

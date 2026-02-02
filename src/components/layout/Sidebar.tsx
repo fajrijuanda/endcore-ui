@@ -13,7 +13,14 @@ import {
     ChevronDown,
     ChevronLeft,
     ChevronRight,
-    Users
+    Users,
+    Box,
+    Type,
+    Copy,
+    Navigation as NavigationIcon,
+    Bell,
+    Database,
+    Activity as ActivityIcon
 } from 'lucide-react';
 
 interface SidebarItem {
@@ -48,15 +55,111 @@ const sidebarGroups: SidebarGroup[] = [
                 icon: Layers,
                 href: '/components',
                 children: [
-                    { name: 'Buttons', href: '/components/buttons' },
-                    { name: 'Cards', href: '/components/cards' },
-                    { name: 'Inputs', href: '/components/inputs' },
-                    { name: 'Feedback', href: '/components/feedback' },
+                    {
+                        name: 'Base Components',
+                        icon: Box,
+                        href: '#',
+                        children: [
+                            { name: 'Accordion', href: '/components/accordion' },
+                            { name: 'Aspect Ratio', href: '/components/aspect-ratio' },
+                            { name: 'Avatar', href: '/components/avatar' },
+                            { name: 'Badge', href: '/components/badge' },
+                            { name: 'Button', href: '/components/button' },
+                            { name: 'Card', href: '/components/card' },
+                            { name: 'Collapsible', href: '/components/collapsible' },
+                            { name: 'Label', href: '/components/label' },
+                            { name: 'Progress', href: '/components/progress' },
+                            { name: 'Scroll Area', href: '/components/scroll-area' },
+                            { name: 'Separator', href: '/components/separator' },
+                            { name: 'Skeleton', href: '/components/skeleton' },
+                            { name: 'Tabs', href: '/components/tabs' },
+                            { name: 'EndcoreCard', href: '/components/endcore-card' },
+                        ]
+                    },
+                    {
+                        name: 'Forms & Inputs',
+                        icon: Type,
+                        href: '#',
+                        children: [
+                            { name: 'Calendar', href: '/components/calendar' },
+                            { name: 'Checkbox', href: '/components/checkbox' },
+                            { name: 'Command', href: '/components/command' },
+                            { name: 'Form', href: '/components/form' },
+                            { name: 'Input', href: '/components/input' },
+                            { name: 'Radio Group', href: '/components/radio-group' },
+                            { name: 'Select', href: '/components/select' },
+                            { name: 'Slider', href: '/components/slider' },
+                            { name: 'Switch', href: '/components/switch' },
+                            { name: 'Textarea', href: '/components/textarea' },
+                            { name: 'Toggle', href: '/components/toggle' },
+                            { name: 'Toggle Group', href: '/components/toggle-group' },
+                        ]
+                    },
+                    {
+                        name: 'Overlays',
+                        icon: Copy,
+                        href: '#',
+                        children: [
+                            { name: 'Alert Dialog', href: '/components/alert-dialog' },
+                            { name: 'Dialog', href: '/components/dialog' },
+                            { name: 'Drawer', href: '/components/drawer' },
+                            { name: 'Hover Card', href: '/components/hover-card' },
+                            { name: 'Popover', href: '/components/popover' },
+                            { name: 'Sheet', href: '/components/sheet' },
+                            { name: 'Tooltip', href: '/components/tooltip' },
+                        ]
+                    },
+                    {
+                        name: 'Navigation',
+                        icon: NavigationIcon,
+                        href: '#',
+                        children: [
+                            { name: 'Context Menu', href: '/components/context-menu' },
+                            { name: 'Dropdown Menu', href: '/components/dropdown-menu' },
+                            { name: 'Menubar', href: '/components/menubar' },
+                            { name: 'Navigation Menu', href: '/components/navigation-menu' },
+                        ]
+                    },
+                    {
+                        name: 'Feedback',
+                        icon: Bell,
+                        href: '#',
+                        children: [
+                            { name: 'Alert', href: '/components/alert' },
+                            { name: 'Sonner', href: '/components/sonner' },
+                        ]
+                    },
+                    {
+                        name: 'Data Display',
+                        icon: Database,
+                        href: '#',
+                        children: [
+                            { name: 'Table', href: '/components/table' },
+                            { name: 'Data Table', href: '/components/data-table' },
+                        ]
+                    },
                 ]
             },
             { name: 'Widgets', icon: LayoutList, href: '/widgets' },
             { name: 'Forms', icon: FileText, href: '/forms' },
             { name: 'Tables', icon: Table, href: '/tables' },
+        ]
+    },
+    {
+        group: 'TELEMETRY',
+        items: [
+            {
+                name: 'Analytics',
+                icon: ActivityIcon,
+                href: '/analytics',
+                children: [
+                    { name: 'Area Chart', href: '/analytics/area' },
+                    { name: 'Bar Chart', href: '/analytics/bar' },
+                    { name: 'Line Chart', href: '/analytics/line' },
+                    { name: 'Pie Chart', href: '/analytics/pie' },
+                    { name: 'Radar Chart', href: '/analytics/radar' },
+                ]
+            }
         ]
     },
     {
@@ -100,16 +203,16 @@ function NavItem({ item, collapsed, pathname, isChild = false }: NavItemProps) {
             isActive && !hasChildren
                 ? "bg-primary text-primary-foreground shadow-md shadow-primary/20"
                 : (isActive && hasChildren)
-                    ? "text-foreground bg-white/5"
-                    : "text-muted-foreground hover:bg-muted hover:text-foreground",
+                    ? "text-[hsl(var(--sidebar-foreground))] bg-white/10"
+                    : "text-[hsl(var(--sidebar-foreground))]/70 hover:bg-white/10 hover:text-[hsl(var(--sidebar-foreground))]",
             isChild && "py-2 mb-1"
         )}>
-            {item.icon && <item.icon size={isChild ? 16 : 20} className={cn("shrink-0", isActive ? (isChild ? "text-primary" : "text-primary-foreground") : "text-muted-foreground group-hover:text-black dark:group-hover:text-primary")} />}
+            {item.icon && <item.icon size={isChild ? 16 : 20} className={cn("shrink-0", isActive ? (isChild ? "text-primary" : "text-primary-foreground") : "text-[hsl(var(--sidebar-foreground))]/70 group-hover:text-[hsl(var(--sidebar-foreground))]")} />}
 
             {isChild && !item.icon && (
                 <div className={cn(
                     "w-1.5 h-1.5 rounded-full mx-1.5 shrink-0 transition-all",
-                    pathname === item.href ? "bg-primary scale-125" : "bg-zinc-500/50 group-hover:bg-zinc-400"
+                    pathname === item.href ? "bg-primary scale-125" : "bg-[hsl(var(--sidebar-foreground))]/30 group-hover:bg-[hsl(var(--sidebar-foreground))]/60"
                 )} />
             )}
 
@@ -121,7 +224,7 @@ function NavItem({ item, collapsed, pathname, isChild = false }: NavItemProps) {
 
             {!collapsed && hasChildren && (
                 <div className={cn("ml-auto transition-transform duration-200", isOpen ? "rotate-180" : "")}>
-                    <ChevronDown size={14} className="text-zinc-500" />
+                    <ChevronDown size={14} className="text-[hsl(var(--sidebar-foreground))]/50" />
                 </div>
             )}
 
@@ -160,7 +263,7 @@ function NavItem({ item, collapsed, pathname, isChild = false }: NavItemProps) {
                     <div className="pt-1 pb-2 space-y-1 border-l border-white/10 ml-5 pl-2">
                         {item.children?.map((child) => (
                             <NavItem
-                                key={child.href}
+                                key={child.name}
                                 item={child}
                                 collapsed={collapsed}
                                 pathname={pathname}
@@ -192,17 +295,21 @@ export default function Sidebar() {
                 collapsed ? "w-[80px]" : "w-[280px]"
             )}
             style={{
-                backgroundColor: 'var(--background-glass)',
-                backdropFilter: 'var(--backdrop-filter)',
-                WebkitBackdropFilter: 'var(--backdrop-filter)',
+                backgroundColor: 'hsl(var(--sidebar))',
                 borderColor: 'var(--border-glass)',
             }}
         >
-            <div className="flex items-center gap-3 p-6 h-20">
-                <div className="relative w-14 h-14 shrink-0">
+            <div className={cn(
+                "flex items-center gap-3 h-20 transition-all duration-300",
+                collapsed ? "px-3 justify-center" : "px-6"
+            )}>
+                <div className={cn(
+                    "relative shrink-0 transition-all duration-300",
+                    collapsed ? "w-10 h-10" : "w-14 h-14"
+                )}>
                     {mounted ? (
                         <Image
-                            src={theme === 'dark' ? "/logo-dark.png" : "/logo.png"}
+                            src={theme === 'dark' ? "/logo.png" : "/logo-dark.png"}
                             alt="Logo"
                             fill
                             className="object-contain"
@@ -216,15 +323,15 @@ export default function Sidebar() {
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -10 }}
-                        className="font-bold text-xl tracking-tight text-foreground whitespace-nowrap"
+                        className="font-bold text-xl tracking-tight text-[hsl(var(--sidebar-foreground))] whitespace-nowrap"
                     >
-                        Endcore<span className="text-black dark:text-primary">UI</span>
+                        Endcore<span className="text-[hsl(var(--sidebar-foreground))]">UI</span>
                     </motion.div>
                 )}
             </div>
 
             {/* Navigation */}
-            <nav className="flex-1 px-4 py-4 overflow-y-auto overflow-x-hidden custom-scrollbar">
+            <nav className="flex-1 px-4 py-4 overflow-y-auto overflow-x-hidden no-scrollbar">
                 <div className="space-y-6">
                     {sidebarGroups.map((group, idx) => (
                         <div key={idx} className="space-y-2">
@@ -232,7 +339,7 @@ export default function Sidebar() {
                                 <div className="h-[1px] bg-border mx-2 my-4 opacity-50" />
                             ) : (
                                 <div className="px-3">
-                                    <span className="text-[10px] font-black tracking-[0.2em] text-zinc-400/70 dark:text-zinc-500/50 uppercase font-mono">
+                                    <span className="text-[10px] font-black tracking-[0.2em] text-[hsl(var(--sidebar-foreground))]/40 uppercase font-mono">
                                         {group.group}
                                     </span>
                                 </div>
@@ -254,10 +361,10 @@ export default function Sidebar() {
             </nav>
 
             {/* Collapse Toggle */}
-            <div className="p-4 border-t border-border">
+            <div className="p-4 border-t border-white/10">
                 <button
                     onClick={() => setCollapsed(!collapsed)}
-                    className="w-full flex items-center justify-center p-2 rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground transition-colors"
+                    className="w-full flex items-center justify-center p-2 rounded-lg hover:bg-white/10 text-[hsl(var(--sidebar-foreground))]/70 hover:text-[hsl(var(--sidebar-foreground))] transition-colors"
                 >
                     {collapsed ? <ChevronRight size={20} /> : <div className="flex items-center gap-2"><ChevronLeft size={20} /> <span className="text-sm font-medium">Collapse</span></div>}
                 </button>
