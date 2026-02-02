@@ -1,4 +1,5 @@
 import Sidebar from "@/components/layout/Sidebar";
+import { BackgroundPattern } from "@/components/layout/BackgroundPattern";
 import Header from "@/components/layout/Header";
 
 export default function AppLayout({
@@ -9,10 +10,8 @@ export default function AppLayout({
     return (
         <div className="flex h-screen w-full overflow-hidden bg-[#f0f0f3] dark:bg-zinc-900 p-4 gap-4 relative transition-colors duration-300">
             {/* Abstract Background */}
-            <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-primary/20 rounded-full blur-[150px] mix-blend-multiply dark:mix-blend-screen" />
-                <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-blue-600/20 rounded-full blur-[150px] mix-blend-multiply dark:mix-blend-screen" />
-                <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5 dark:opacity-10" />
+            <div className="absolute inset-0 z-0">
+                <BackgroundPattern />
             </div>
 
             <div className="relative z-10 h-full">

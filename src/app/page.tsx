@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { EndcoreCard } from "@/components/ui/EndcoreCard";
+import { BackgroundPattern } from "@/components/layout/BackgroundPattern";
 import { ArrowRight, Box, Hexagon, Shield, Globe, Github } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,10 +9,8 @@ export default function LandingPage() {
   return (
     <div className="h-screen w-full relative bg-[#f0f0f3] dark:bg-zinc-900 transition-colors duration-300 overflow-hidden flex flex-col p-4 gap-4">
       {/* Abstract Background (Fixed) */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-primary/20 rounded-full blur-[150px] mix-blend-multiply dark:mix-blend-screen" />
-        <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-blue-600/20 rounded-full blur-[150px] mix-blend-multiply dark:mix-blend-screen" />
-        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5 dark:opacity-10" />
+      <div className="absolute inset-0 z-0">
+        <BackgroundPattern />
       </div>
 
       {/* Header / Navbar Wrapper */}
