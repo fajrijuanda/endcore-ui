@@ -291,12 +291,14 @@ export default function Sidebar() {
     return (
         <aside
             className={cn(
-                "h-full transition-all duration-300 ease-in-out shadow-xl flex flex-col rounded-[2rem] border overflow-hidden",
+                "h-full transition-all duration-300 ease-in-out shadow-2xl flex flex-col rounded-[2.5rem] border overflow-hidden",
                 collapsed ? "w-[80px]" : "w-[280px]"
             )}
             style={{
-                backgroundColor: 'hsl(var(--sidebar))',
-                borderColor: 'var(--border-glass)',
+                backgroundColor: 'hsl(var(--sidebar) / 0.8)',
+                borderColor: 'var(--sidebar-border)',
+                backdropFilter: 'blur(20px) saturate(180%)',
+                WebkitBackdropFilter: 'blur(20px) saturate(180%)',
             }}
         >
             <div className={cn(
