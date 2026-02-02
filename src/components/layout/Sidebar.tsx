@@ -8,19 +8,32 @@ import {
     Layers,
     FileText,
     Settings,
+    Table,
+    LayoutList,
+    ChevronDown,
     ChevronLeft,
     ChevronRight,
-    Users,
-    Table,
-    LayoutList
+    Users
 } from 'lucide-react';
+
+interface SidebarItem {
+    name: string;
+    icon?: React.ElementType;
+    href: string;
+    children?: SidebarItem[];
+}
+
+interface SidebarGroup {
+    group: string;
+    items: SidebarItem[];
+}
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 
-const sidebarGroups = [
+const sidebarGroups: SidebarGroup[] = [
     {
         group: 'OVERVIEW',
         items: [
@@ -30,7 +43,17 @@ const sidebarGroups = [
     {
         group: 'TACTICAL MODULES',
         items: [
-            { name: 'Components', icon: Layers, href: '/components' },
+            {
+                name: 'Components',
+                icon: Layers,
+                href: '/components',
+                children: [
+                    { name: 'Buttons', href: '/components/buttons' },
+                    { name: 'Cards', href: '/components/cards' },
+                    { name: 'Inputs', href: '/components/inputs' },
+                    { name: 'Feedback', href: '/components/feedback' },
+                ]
+            },
             { name: 'Widgets', icon: LayoutList, href: '/widgets' },
             { name: 'Forms', icon: FileText, href: '/forms' },
             { name: 'Tables', icon: Table, href: '/tables' },
@@ -50,6 +73,106 @@ const sidebarGroups = [
         ]
     }
 ];
+
+interface NavItemProps {
+    item: SidebarItem;
+    collapsed: boolean;
+    pathname: string;
+    isChild?: boolean;
+}
+
+function NavItem({ item, collapsed, pathname, isChild = false }: NavItemProps) {
+    const [isOpen, setIsOpen] = useState(false);
+    const hasChildren = item.children && item.children.length > 0;
+
+    // Check if any child is active
+    const isChildActive = hasChildren && item.children?.some((child) => pathname === child.href);
+    const isActive = pathname === item.href || isChildActive;
+
+    // Auto-open if child is active
+    React.useEffect(() => {
+        if (isChildActive) setIsOpen(true);
+    }, [isChildActive]);
+
+    const content = (
+        <div className={cn(
+            "flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-200 group relative cursor-pointer",
+            isActive && !hasChildren
+                ? "bg-primary text-primary-foreground shadow-md shadow-primary/20"
+                : (isActive && hasChildren)
+                    ? "text-foreground bg-white/5"
+                    : "text-muted-foreground hover:bg-muted hover:text-foreground",
+            isChild && "py-2 mb-1"
+        )}>
+            {item.icon && <item.icon size={isChild ? 16 : 20} className={cn("shrink-0", isActive ? (isChild ? "text-primary" : "text-primary-foreground") : "text-muted-foreground group-hover:text-black dark:group-hover:text-primary")} />}
+
+            {isChild && !item.icon && (
+                <div className={cn(
+                    "w-1.5 h-1.5 rounded-full mx-1.5 shrink-0 transition-all",
+                    pathname === item.href ? "bg-primary scale-125" : "bg-zinc-500/50 group-hover:bg-zinc-400"
+                )} />
+            )}
+
+            {!collapsed && (
+                <span className={cn("font-medium truncate", isChild ? "text-[13px]" : "text-sm")}>
+                    {item.name}
+                </span>
+            )}
+
+            {!collapsed && hasChildren && (
+                <div className={cn("ml-auto transition-transform duration-200", isOpen ? "rotate-180" : "")}>
+                    <ChevronDown size={14} className="text-zinc-500" />
+                </div>
+            )}
+
+            {/* Tooltip for collapsed mode */}
+            {collapsed && (
+                <div className="absolute left-full ml-2 px-2 py-1 bg-popover text-popover-foreground text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-sm border border-border z-50 font-sans">
+                    {item.name}
+                </div>
+            )}
+
+            {isActive && !collapsed && !hasChildren && (
+                <motion.div
+                    layoutId="activeIndicator"
+                    className="absolute right-2 w-1 h-1 rounded-full bg-white/50"
+                />
+            )}
+        </div>
+    );
+
+    return (
+        <div className="space-y-1">
+            {hasChildren ? (
+                <div onClick={() => !collapsed && setIsOpen(!isOpen)}>
+                    {content}
+                </div>
+            ) : (
+                <Link href={item.href}>{content}</Link>
+            )}
+
+            {!collapsed && hasChildren && (
+                <motion.div
+                    initial={false}
+                    animate={isOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
+                    className="overflow-hidden pl-4"
+                >
+                    <div className="pt-1 pb-2 space-y-1 border-l border-white/10 ml-5 pl-2">
+                        {item.children?.map((child) => (
+                            <NavItem
+                                key={child.href}
+                                item={child}
+                                collapsed={collapsed}
+                                pathname={pathname}
+                                isChild={true}
+                            />
+                        ))}
+                    </div>
+                </motion.div>
+            )}
+        </div>
+    );
+}
 
 export default function Sidebar() {
     const [collapsed, setCollapsed] = useState(false);
@@ -116,43 +239,14 @@ export default function Sidebar() {
                             )}
 
                             <div className="space-y-1">
-                                {group.items.map((item) => {
-                                    const isActive = pathname === item.href;
-                                    return (
-                                        <Link
-                                            key={item.href}
-                                            href={item.href}
-                                            className={cn(
-                                                "flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-200 group relative",
-                                                isActive
-                                                    ? "bg-primary text-primary-foreground shadow-md shadow-primary/20"
-                                                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
-                                            )}
-                                        >
-                                            <item.icon size={20} className={cn("shrink-0", isActive ? "text-primary-foreground" : "text-muted-foreground group-hover:text-black dark:group-hover:text-primary")} />
-
-                                            {!collapsed && (
-                                                <span className="font-medium truncate text-sm">
-                                                    {item.name}
-                                                </span>
-                                            )}
-
-                                            {/* Tooltip for collapsed mode */}
-                                            {collapsed && (
-                                                <div className="absolute left-full ml-2 px-2 py-1 bg-popover text-popover-foreground text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-sm border border-border z-50">
-                                                    {item.name}
-                                                </div>
-                                            )}
-
-                                            {isActive && !collapsed && (
-                                                <motion.div
-                                                    layoutId="activeTab"
-                                                    className="absolute right-2 w-1 h-1 rounded-full bg-white/50"
-                                                />
-                                            )}
-                                        </Link>
-                                    );
-                                })}
+                                {group.items.map((item) => (
+                                    <NavItem
+                                        key={item.name}
+                                        item={item}
+                                        collapsed={collapsed}
+                                        pathname={pathname}
+                                    />
+                                ))}
                             </div>
                         </div>
                     ))}
@@ -168,9 +262,6 @@ export default function Sidebar() {
                     {collapsed ? <ChevronRight size={20} /> : <div className="flex items-center gap-2"><ChevronLeft size={20} /> <span className="text-sm font-medium">Collapse</span></div>}
                 </button>
             </div>
-
-
-
         </aside>
     );
 }
