@@ -55,54 +55,56 @@ export default function RadarChartPage() {
             </div>
 
             {/* Main Radar Chart */}
-            <EndcoreCard title="Tactical_Capability_Array" status="active" className="h-[600px]">
-                <div className="w-full h-full p-4">
-                    <ResponsiveContainer width="100%" height="100%">
-                        <ReRadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
-                            <PolarGrid
-                                stroke="currentColor"
-                                className="text-zinc-200 dark:text-zinc-800"
-                            />
-                            <PolarAngleAxis
-                                dataKey="subject"
-                                tick={{ fontSize: 10, fontWeight: 900, fill: 'currentColor' }}
-                                className="text-zinc-400"
-                            />
-                            <PolarRadiusAxis
-                                angle={30}
-                                domain={[0, 150]}
-                                tick={false}
-                                axisLine={false}
-                            />
-                            <Tooltip
-                                contentStyle={{
-                                    backgroundColor: 'black',
-                                    border: 'none',
-                                    borderRadius: '12px',
-                                    fontSize: '12px',
-                                    color: 'white',
-                                    fontWeight: '900'
-                                }}
-                            />
-                            <Radar
-                                name="Operator_A"
-                                dataKey="A"
-                                stroke="hsl(var(--primary))"
-                                fill="hsl(var(--primary))"
-                                fillOpacity={0.6}
-                            />
-                            <Radar
-                                name="Benchmark_B"
-                                dataKey="B"
-                                stroke="currentColor"
-                                fill="currentColor"
-                                fillOpacity={0.1}
-                                className="text-zinc-400 dark:text-zinc-100"
-                            />
-                        </ReRadarChart>
-                    </ResponsiveContainer>
-                </div>
-            </EndcoreCard>
+            <div className="grid grid-cols-1 gap-8">
+                <EndcoreCard title="Tactical_Capability_Array" status="active" className="h-[600px]">
+                    <div className="w-full h-full">
+                        <ResponsiveContainer width="100%" height="100%">
+                            <ReRadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
+                                <PolarGrid
+                                    stroke="currentColor"
+                                    className="text-zinc-200 dark:text-zinc-800"
+                                />
+                                <PolarAngleAxis
+                                    dataKey="subject"
+                                    tick={{ fontSize: 10, fontWeight: 900, fill: 'currentColor' }}
+                                    className="text-zinc-400"
+                                />
+                                <PolarRadiusAxis
+                                    angle={30}
+                                    domain={[0, 150]}
+                                    tick={false}
+                                    axisLine={false}
+                                />
+                                <Tooltip
+                                    contentStyle={{
+                                        backgroundColor: 'black',
+                                        border: 'none',
+                                        borderRadius: '12px',
+                                        fontSize: '12px',
+                                        color: 'white',
+                                        fontWeight: '900'
+                                    }}
+                                />
+                                <Radar
+                                    name="Operator_A"
+                                    dataKey="A"
+                                    stroke="hsl(var(--primary))"
+                                    fill="hsl(var(--primary))"
+                                    fillOpacity={0.6}
+                                />
+                                <Radar
+                                    name="Benchmark_B"
+                                    dataKey="B"
+                                    stroke="currentColor"
+                                    fill="currentColor"
+                                    fillOpacity={0.1}
+                                    className="text-zinc-400 dark:text-zinc-100"
+                                />
+                            </ReRadarChart>
+                        </ResponsiveContainer>
+                    </div>
+                </EndcoreCard>
+            </div>
         </div>
     );
 }

@@ -60,57 +60,59 @@ export default function PieChartPage() {
             </div>
 
             {/* Main Pie Chart */}
-            <EndcoreCard title="Asset_Weight_Telemetry" status="active" className="h-[500px]">
-                <div className="w-full h-full p-4 flex flex-col md:flex-row items-center justify-center gap-8">
-                    <div className="w-full h-[300px] md:h-full md:flex-1">
-                        <ResponsiveContainer width="100%" height="100%">
-                            <RePieChart>
-                                <Pie
-                                    data={data}
-                                    cx="50%"
-                                    cy="50%"
-                                    innerRadius={80}
-                                    outerRadius={120}
-                                    paddingAngle={5}
-                                    dataKey="value"
-                                    stroke="none"
-                                >
-                                    {data.map((entry, index) => (
-                                        <Cell
-                                            key={`cell-${index}`}
-                                            fill={COLORS[index % COLORS.length]}
-                                        />
-                                    ))}
-                                </Pie>
-                                <Tooltip
-                                    contentStyle={{
-                                        backgroundColor: 'black',
-                                        border: 'none',
-                                        borderRadius: '12px',
-                                        fontSize: '12px',
-                                        color: 'white',
-                                        fontWeight: '900'
-                                    }}
-                                />
-                            </RePieChart>
-                        </ResponsiveContainer>
-                    </div>
+            <div className="grid grid-cols-1 gap-8">
+                <EndcoreCard title="Asset_Weight_Telemetry" status="active" className="h-[600px]">
+                    <div className="w-full h-full flex flex-col md:flex-row items-center justify-center gap-8">
+                        <div className="w-full h-[300px] md:h-full md:flex-1">
+                            <ResponsiveContainer width="100%" height="100%">
+                                <RePieChart>
+                                    <Pie
+                                        data={data}
+                                        cx="50%"
+                                        cy="50%"
+                                        innerRadius={80}
+                                        outerRadius={140}
+                                        paddingAngle={5}
+                                        dataKey="value"
+                                        stroke="none"
+                                    >
+                                        {data.map((entry, index) => (
+                                            <Cell
+                                                key={`cell-${index}`}
+                                                fill={COLORS[index % COLORS.length]}
+                                            />
+                                        ))}
+                                    </Pie>
+                                    <Tooltip
+                                        contentStyle={{
+                                            backgroundColor: 'black',
+                                            border: 'none',
+                                            borderRadius: '12px',
+                                            fontSize: '12px',
+                                            color: 'white',
+                                            fontWeight: '900'
+                                        }}
+                                    />
+                                </RePieChart>
+                            </ResponsiveContainer>
+                        </div>
 
-                    <div className="flex-1 space-y-6">
-                        <div className="grid grid-cols-2 gap-4">
-                            {data.map((item, i) => (
-                                <div key={i} className="flex items-center gap-3 p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200 dark:border-white/5">
-                                    <div className="w-4 h-4 rounded-full" style={{ backgroundColor: COLORS[i] }} />
-                                    <div>
-                                        <p className="text-[10px] font-black uppercase text-zinc-900 dark:text-white">{item.name}</p>
-                                        <p className="text-xl font-black text-zinc-400">{item.value}%</p>
+                        <div className="flex-1 space-y-4 w-full">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                {data.map((item, i) => (
+                                    <div key={i} className="flex items-center gap-3 p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200 dark:border-white/5">
+                                        <div className="w-4 h-4 rounded-full" style={{ backgroundColor: COLORS[i] }} />
+                                        <div>
+                                            <p className="text-[10px] font-black uppercase text-zinc-900 dark:text-white">{item.name}</p>
+                                            <p className="text-xl font-black text-zinc-400">{item.value}%</p>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
                     </div>
-                </div>
-            </EndcoreCard>
+                </EndcoreCard>
+            </div>
         </div>
     );
 }

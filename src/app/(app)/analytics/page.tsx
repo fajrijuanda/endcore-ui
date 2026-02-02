@@ -12,8 +12,6 @@ import {
     CartesianGrid,
     Tooltip,
     ResponsiveContainer,
-    LineChart,
-    Line
 } from 'recharts';
 import {
     Activity,
@@ -22,8 +20,6 @@ import {
     Radio,
     TrendingUp,
     ArrowUpRight,
-    Users,
-    AlertTriangle
 } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
