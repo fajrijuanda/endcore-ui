@@ -1,12 +1,17 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
+import Image from "next/image";
+
 export default function LoginPage() {
     return (
         <div className="space-y-8">
-            <div className="flex flex-col space-y-2 text-center">
-                <h1 className="text-2xl font-bold tracking-tight text-foreground">Access Verification</h1>
-                <p className="text-sm text-muted-foreground">Enter your credentials to access the Endcore Hub.</p>
+            <div className="flex flex-col items-center space-y-4 text-center">
+                <Image src="/logo.png" alt="Logo" width={48} height={48} className="opacity-80" />
+                <div className="space-y-2">
+                    <h1 className="text-2xl font-bold tracking-tight text-foreground">Login</h1>
+                    <p className="text-sm text-muted-foreground">Enter your credentials to access the Endcore Hub.</p>
+                </div>
             </div>
 
             <form className="space-y-4">
@@ -39,7 +44,7 @@ export default function LoginPage() {
             </form>
 
             <div className="text-center text-sm text-muted-foreground">
-                Don&apos;t have code clearance? <Link href="/auth/register" className="text-foreground font-bold hover:underline">Request Access</Link>
+                Don&apos;t have code clearance? <Link href="/auth/register" className="text-foreground font-bold hover:underline">Register</Link>
             </div>
 
             <div className="pt-4 flex justify-center">
