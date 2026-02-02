@@ -34,11 +34,31 @@ export default function LoginPage() {
             </div>
 
             {/* Credential Hint for Demo */}
-            <div className="bg-primary/10 border border-primary/20 rounded-lg p-3 text-xs text-center text-zinc-600 dark:text-zinc-400">
-                <p className="font-bold mb-1 text-black dark:text-primary">DEMO CREDENTIALS</p>
-                <div className="flex flex-col gap-1">
-                    <span className="select-all cursor-pointer">Email: <span className="font-mono">admin@endcore.ui</span></span>
-                    <span className="select-all cursor-pointer">Pass: <span className="font-mono">12345678</span></span>
+            <div className="bg-black/5 dark:bg-black/20 border border-dashed border-zinc-300 dark:border-primary/20 rounded-xl p-4 relative overflow-hidden group">
+                {/* Decorative corners */}
+                <div className="absolute top-0 right-0 w-8 h-8">
+                    <div className="absolute top-0 right-0 w-full h-[1px] bg-primary/30" />
+                    <div className="absolute top-0 right-0 w-[1px] h-full bg-primary/30" />
+                </div>
+                <div className="absolute bottom-0 left-0 w-8 h-8">
+                    <div className="absolute bottom-0 left-0 w-full h-[1px] bg-primary/30" />
+                    <div className="absolute bottom-0 left-0 w-[1px] h-full bg-primary/30" />
+                </div>
+
+                <div className="flex items-center gap-2 mb-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                    <span className="text-[10px] font-black uppercase tracking-[0.25em] text-zinc-500 dark:text-zinc-400">ACCESS_PROTOCOL: ACTIVE</span>
+                </div>
+
+                <div className="space-y-2.5">
+                    <div className="flex items-center justify-between border-b border-zinc-200 dark:border-white/5 pb-2 cursor-pointer group/line" onClick={() => setEmail("admin@endcore.ui")}>
+                        <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-600 uppercase tracking-tighter">OPERATIVE_ID</span>
+                        <code className="text-[11px] font-mono text-black dark:text-primary select-all font-bold group-hover/line:text-yellow-600 transition-colors">admin@endcore.ui</code>
+                    </div>
+                    <div className="flex items-center justify-between cursor-pointer group/line" onClick={() => setPassword("12345678")}>
+                        <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-600 uppercase tracking-tighter">SEC_TOKEN</span>
+                        <code className="text-[11px] font-mono text-black dark:text-primary select-all font-bold group-hover/line:text-yellow-600 transition-colors">12345678</code>
+                    </div>
                 </div>
             </div>
 
