@@ -34,7 +34,7 @@ export default function LoginPage() {
             </div>
 
             {/* Credential Hint for Demo */}
-            <div className="bg-black/5 dark:bg-black/20 border border-dashed border-zinc-300 dark:border-primary/20 rounded-xl p-4 relative overflow-hidden group">
+            <div className="bg-black/5 dark:bg-black/20 border border-zinc-200 dark:border-white/10 rounded-[2.5rem] p-6 relative overflow-hidden group transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl">
                 {/* Decorative corners */}
                 <div className="absolute top-0 right-0 w-8 h-8">
                     <div className="absolute top-0 right-0 w-full h-[1px] bg-primary/30" />
@@ -72,7 +72,7 @@ export default function LoginPage() {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="admin@endcore.ui"
-                        className="w-full bg-white/50 dark:bg-black/50 border border-zinc-200 dark:border-white/10 rounded-xl px-4 py-3 text-foreground focus:outline-none focus:border-black/50 dark:focus:border-primary/50 transition-colors placeholder:text-zinc-400 dark:placeholder:text-zinc-700"
+                        className="w-full bg-white/50 dark:bg-black/50 border border-zinc-200 dark:border-white/10 rounded-[1.5rem] px-4 py-3 text-foreground focus:outline-none focus:border-black/50 dark:focus:border-primary/50 transition-colors placeholder:text-zinc-400 dark:placeholder:text-zinc-700"
                     />
                 </div>
 
@@ -88,7 +88,7 @@ export default function LoginPage() {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="••••••••"
-                        className="w-full bg-white/50 dark:bg-black/50 border border-zinc-200 dark:border-white/10 rounded-xl px-4 py-3 text-foreground focus:outline-none focus:border-black/50 dark:focus:border-primary/50 transition-colors placeholder:text-zinc-400 dark:placeholder:text-zinc-700"
+                        className="w-full bg-white/50 dark:bg-black/50 border border-zinc-200 dark:border-white/10 rounded-[1.5rem] px-4 py-3 text-foreground focus:outline-none focus:border-black/50 dark:focus:border-primary/50 transition-colors placeholder:text-zinc-400 dark:placeholder:text-zinc-700"
                     />
                 </div>
 

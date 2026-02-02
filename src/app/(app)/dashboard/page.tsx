@@ -77,7 +77,7 @@ export default function DashboardPage() {
                 </div>
                 <div className="space-y-3">
                     {[1, 2].map((i) => (
-                        <div key={i} className="flex items-center justify-between p-4 rounded-xl border border-white/5 bg-card hover:bg-muted/50 transition-colors">
+                        <div key={i} className="flex items-center justify-between p-4 rounded-2xl border border-zinc-200 dark:border-white/10 bg-white/50 dark:bg-card transition-all duration-500 hover:-translate-y-1 hover:shadow-xl group/item">
                             <div className="flex items-center gap-4">
                                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-black dark:text-primary">
                                     <DollarSign size={20} />

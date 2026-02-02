@@ -27,8 +27,8 @@ export function SupplyNodeCard({ id, name, description, price, category, image, 
 
     return (
         <motion.div
-            whileHover={{ y: -5 }}
-            className="group relative bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 rounded-[2rem] overflow-hidden transition-all hover:shadow-2xl active:scale-[0.98]"
+            whileHover={{ y: -6 }}
+            className="group relative bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 rounded-[2.5rem] overflow-hidden transition-all duration-500 hover:shadow-2xl"
         >
             {/* Header Overlay */}
             <div className="absolute top-4 left-4 z-10 flex items-center gap-2">

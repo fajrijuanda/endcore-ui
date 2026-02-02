@@ -150,7 +150,7 @@ export default function LandingPage() {
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Visual Widget 1: Analytics */}
-                <div className="bg-white/40 dark:bg-black/40 border border-zinc-200 dark:border-white/5 rounded-[2rem] p-8 h-[400px] relative overflow-hidden flex flex-col justify-between backdrop-blur-md">
+                <div className="bg-white/40 dark:bg-black/40 border border-zinc-200 dark:border-white/5 rounded-[2rem] p-8 h-[400px] relative overflow-hidden flex flex-col justify-between backdrop-blur-md transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl">
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-3">
                       <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
@@ -186,7 +186,7 @@ export default function LandingPage() {
                 </div>
 
                 {/* Visual Widget 2: Security Hub */}
-                <div className="bg-white/40 dark:bg-black/40 border border-zinc-200 dark:border-white/5 rounded-[2rem] p-8 h-[400px] relative overflow-hidden backdrop-blur-md">
+                <div className="bg-white/40 dark:bg-black/40 border border-zinc-200 dark:border-white/5 rounded-[2rem] p-8 h-[400px] relative overflow-hidden backdrop-blur-md transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl">
                   <div className="flex items-center justify-between mb-8">
                     <h3 className="text-xl font-black text-foreground">SECURITY_HUB</h3>
                     <Lock className="w-6 h-6 text-black dark:text-primary" />
@@ -227,7 +227,7 @@ export default function LandingPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Plan 1 */}
-                <div className="bg-white/40 dark:bg-black/40 border border-zinc-200 dark:border-white/5 rounded-[2.5rem] p-8 backdrop-blur-md flex flex-col h-full relative group hover:border-black dark:hover:border-primary transition-all duration-300">
+                <div className="bg-white/40 dark:bg-black/40 border border-zinc-200 dark:border-white/5 rounded-[2.5rem] p-8 backdrop-blur-md flex flex-col h-full relative group transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl">
                   <div className="mb-6">
                     <span className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-2 block">Level 1</span>
                     <h3 className="text-2xl font-black text-foreground">OPERATIVE</h3>
@@ -249,7 +249,7 @@ export default function LandingPage() {
                 </div>
 
                 {/* Plan 2 */}
-                <div className="bg-primary border-2 border-primary rounded-[2.5rem] p-8 shadow-[0_0_40px_rgba(255,215,0,0.2)] flex flex-col h-full relative z-10 scale-105 transform">
+                <div className="bg-primary border-2 border-primary rounded-[2.5rem] p-8 shadow-[0_0_40px_rgba(255,215,0,0.2)] flex flex-col h-full relative z-10 scale-105 transform transition-all duration-500 hover:scale-[1.07] hover:-translate-y-2 hover:shadow-2xl">
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-black text-primary text-[10px] font-black px-4 py-1.5 rounded-full tracking-widest uppercase shadow-xl">
                     Recommended
                   </div>
@@ -276,7 +276,7 @@ export default function LandingPage() {
                 </div>
 
                 {/* Plan 3 */}
-                <div className="bg-white/40 dark:bg-black/40 border border-zinc-200 dark:border-white/5 rounded-[2.5rem] p-8 backdrop-blur-md flex flex-col h-full relative group hover:border-black dark:hover:border-primary transition-all duration-300">
+                <div className="bg-white/40 dark:bg-black/40 border border-zinc-200 dark:border-white/5 rounded-[2.5rem] p-8 backdrop-blur-md flex flex-col h-full relative group transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl">
                   <div className="mb-6">
                     <span className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-2 block">Level 3</span>
                     <h3 className="text-2xl font-black text-foreground">COMMAND</h3>

@@ -198,7 +198,7 @@ export default function CommercePage() {
                                             initial={{ opacity: 0, x: 20 }}
                                             animate={{ opacity: 1, x: 0 }}
                                             key={item.id}
-                                            className="flex items-center gap-4 p-3 rounded-2xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200 dark:border-white/5 group"
+                                            className="flex items-center gap-4 p-3 rounded-2xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200 dark:border-white/10 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl group"
                                         >
                                             <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-zinc-200 dark:bg-zinc-700 shrink-0">
                                                 <Image src={item.image} alt={item.name} fill className="object-cover" />
@@ -243,7 +243,7 @@ export default function CommercePage() {
                     </EndcoreCard>
 
                     {/* Quick Info Card */}
-                    <div className="p-6 rounded-[2rem] bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 shadow-sm overflow-hidden relative group">
+                    <div className="p-6 rounded-[2.5rem] bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 border border-zinc-700 dark:border-zinc-200 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl overflow-hidden relative group">
                         <div className="relative z-10 space-y-2">
                             <h4 className="text-[10px] font-black uppercase tracking-widest opacity-60">System_Status</h4>
                             <p className="font-mono text-sm leading-tight">All supply nodes are currently operating at 94% efficiency. Logistic drones available.</p>
