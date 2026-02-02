@@ -84,7 +84,7 @@ export default function LandingPage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <EndcoreCard title="Dynamic Architecture" status="active" className="h-full">
                   <div className="flex flex-col items-start gap-4 py-4">
-                    <Box className="text-primary w-10 h-10" />
+                    <Box className="text-black dark:text-primary w-10 h-10" />
                     <h3 className="text-xl font-bold text-foreground">Floating Grid System</h3>
                     <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
                       Detached navigation and content modules that adapt fluidly to any viewport, creating a sense of depth and dimensionality.
@@ -94,7 +94,7 @@ export default function LandingPage() {
 
                 <EndcoreCard title="Tactical Visuals" status="warning" className="h-full">
                   <div className="flex flex-col items-start gap-4 py-4">
-                    <Hexagon className="text-primary w-10 h-10" />
+                    <Hexagon className="text-black dark:text-primary w-10 h-10" />
                     <h3 className="text-xl font-bold text-foreground">High-Contrast UI</h3>
                     <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
                       Engineered with a specific yellow-black tactical palette for maximum readability in high-stress environments.
@@ -104,7 +104,7 @@ export default function LandingPage() {
 
                 <EndcoreCard title="System Security" status="critical" className="h-full">
                   <div className="flex flex-col items-start gap-4 py-4">
-                    <Shield className="text-primary w-10 h-10" />
+                    <Shield className="text-black dark:text-primary w-10 h-10" />
                     <h3 className="text-xl font-bold text-foreground">Robust Auth</h3>
                     <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
                       Integrated authentication workflows and role-based access control patterns ready for deployment.
