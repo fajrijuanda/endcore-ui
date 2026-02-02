@@ -45,7 +45,7 @@ export default function Sidebar() {
     return (
         <aside
             className={cn(
-                "sticky top-0 left-0 z-40 h-screen transition-all duration-300 ease-in-out border-r border-border bg-card shadow-sm flex flex-col",
+                "h-full transition-all duration-300 ease-in-out bg-card shadow-sm flex flex-col rounded-[2rem] border border-white/10 overflow-hidden",
                 collapsed ? "w-[80px]" : "w-[280px]"
             )}
         >
@@ -125,25 +125,7 @@ export default function Sidebar() {
                 </button>
             </div>
 
-            {/* User Profile Snippet (Bottom) */}
-            {!collapsed && (
-                <div className="p-4 mx-4 mb-4 rounded-2xl bg-muted/50 border border-border flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
-                        A
-                    </div>
-                    <div className="overflow-hidden">
-                        <p className="text-sm font-bold truncate text-foreground">Admin User</p>
-                        <p className="text-xs text-muted-foreground truncate">admin@endcore.com</p>
-                    </div>
-                </div>
-            )}
-            {collapsed && (
-                <div className="p-4 flex justify-center mb-4">
-                    <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold cursor-pointer hover:ring-2 hover:ring-primary hover:ring-offset-2 transition-all">
-                        A
-                    </div>
-                </div>
-            )}
+
 
         </aside>
     );
