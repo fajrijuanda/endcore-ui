@@ -7,10 +7,10 @@ import Image from "next/image";
 
 export default function RegisterPage() {
     return (
-        <div className="space-y-8">
-            <div className="flex flex-col items-center space-y-4 text-center">
+        <div className="space-y-6">
+            <div className="flex flex-col items-center space-y-2 text-center">
                 <Image src="/logo.png" alt="Logo" width={140} height={140} className="opacity-80" />
-                <div className="space-y-2">
+                <div className="space-y-1">
                     <h1 className="text-2xl font-bold tracking-tight text-foreground">Join Endcore</h1>
                     <p className="text-sm text-muted-foreground">Create a new operative account.</p>
                 </div>
