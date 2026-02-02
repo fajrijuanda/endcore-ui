@@ -13,7 +13,7 @@ export const Navbar = () => {
 
     return (
         <nav
-            className="sticky top-4 z-50 mx-auto w-[95%] rounded-2xl border transition-all duration-300"
+            className="sticky top-4 z-[100] mx-auto w-[95%] rounded-[2.5rem] border transition-all duration-300"
             style={{
                 backgroundColor: 'var(--background-glass)',
                 backdropFilter: 'var(--backdrop-filter)',
@@ -38,13 +38,13 @@ export const Navbar = () => {
 
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center gap-8">
-                    <Link href="#features" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                    <Link href="#features" className="text-sm font-medium text-zinc-600 dark:text-muted-foreground hover:text-black dark:hover:text-primary transition-colors">
                         Features
                     </Link>
-                    <Link href="#showcase" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                    <Link href="#showcase" className="text-sm font-medium text-zinc-600 dark:text-muted-foreground hover:text-black dark:hover:text-primary transition-colors">
                         Showcase
                     </Link>
-                    <Link href="#pricing" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                    <Link href="#pricing" className="text-sm font-medium text-zinc-600 dark:text-muted-foreground hover:text-black dark:hover:text-primary transition-colors">
                         Pricing
                     </Link>
                 </div>

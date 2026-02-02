@@ -18,7 +18,7 @@ export default function LandingPage() {
       <Navbar />
 
       {/* Main Floating Content Wrapper */}
-      <main className="relative z-10 w-full max-w-[95%] mx-auto pt-6 pb-12">
+      <main className="relative z-10 w-full max-w-[95%] mx-auto pb-6 h-[calc(100vh-100px)] overflow-y-auto custom-scrollbar">
         <div
           className="flex flex-col rounded-[2.5rem] overflow-hidden border transition-all duration-300 shadow-xl"
           style={{

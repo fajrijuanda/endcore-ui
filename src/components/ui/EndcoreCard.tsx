@@ -30,7 +30,7 @@ export const EndcoreCard = ({ title, status = 'neutral', children, className, ac
             <div className="flex justify-between items-center p-5 border-b border-white/5">
                 <div className="flex items-center gap-3">
                     <div className={cn("h-1.5 w-1.5 rounded-full", statusColor[status])} />
-                    <h3 className="text-[10px] uppercase tracking-[0.2em] text-zinc-400 font-bold group-hover:text-primary transition-colors">
+                    <h3 className="text-[10px] uppercase tracking-[0.2em] text-zinc-400 font-bold group-hover:text-black dark:group-hover:text-primary transition-colors">
                         {title}
                     </h3>
                 </div>
