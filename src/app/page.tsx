@@ -244,7 +244,7 @@ export default function LandingPage() {
                   </ul>
 
                   <button className="w-full py-4 rounded-full border border-zinc-300 dark:border-white/10 font-bold hover:bg-foreground hover:text-background transition-colors dark:text-white">
-                    INITIALIZE_BASE
+                    INITIALIZE BASE
                   </button>
                 </div>
 
@@ -269,7 +269,7 @@ export default function LandingPage() {
                   </ul>
 
                   <button className="w-full py-4 rounded-full bg-black text-primary font-black shadow-lg hover:shadow-2xl transition-all hover:scale-[1.02]">
-                    COMMENCE_DEPLOY
+                    COMMENCE DEPLOY
                   </button>
 
                   <Image src="/logo.png" alt="" width={60} height={60} className="absolute -bottom-2 -right-2 opacity-10 pointer-events-none" />
@@ -293,7 +293,7 @@ export default function LandingPage() {
                   </ul>
 
                   <button className="w-full py-4 rounded-full border border-zinc-300 dark:border-white/10 font-bold hover:bg-foreground hover:text-background transition-colors dark:text-white">
-                    ORDER_ESTABLISH
+                    ORDER ESTABLISH
                   </button>
                 </div>
               </div>
