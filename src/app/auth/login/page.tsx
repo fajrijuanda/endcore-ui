@@ -52,11 +52,11 @@ export default function LoginPage() {
 
                 <div className="space-y-2.5">
                     <div className="flex items-center justify-between border-b border-zinc-200 dark:border-white/5 pb-2 cursor-pointer group/line" onClick={() => setEmail("admin@endcore.ui")}>
-                        <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-600 uppercase tracking-tighter">OPERATIVE_ID</span>
+                        <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-600 uppercase tracking-tighter">Email</span>
                         <code className="text-[11px] font-mono text-black dark:text-primary select-all font-bold group-hover/line:text-yellow-600 transition-colors">admin@endcore.ui</code>
                     </div>
                     <div className="flex items-center justify-between cursor-pointer group/line" onClick={() => setPassword("12345678")}>
-                        <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-600 uppercase tracking-tighter">SEC_TOKEN</span>
+                        <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-600 uppercase tracking-tighter">Password</span>
                         <code className="text-[11px] font-mono text-black dark:text-primary select-all font-bold group-hover/line:text-yellow-600 transition-colors">12345678</code>
                     </div>
                 </div>
