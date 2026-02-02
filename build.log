@@ -1,0 +1,23 @@
+
+> endcore-ui@0.1.0 build
+> next build
+
+▲ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 3.1s
+  Running TypeScript ...
+Failed to compile.
+
+./src/app/components/page.tsx:179:74
+Type error: Type '{ value: number; className: string; indicatorClassName: string; }' is not assignable to type 'IntrinsicAttributes & Omit<ProgressProps & RefAttributes<HTMLDivElement>, "ref"> & RefAttributes<HTMLDivElement>'.
+  Property 'indicatorClassName' does not exist on type 'IntrinsicAttributes & Omit<ProgressProps & RefAttributes<HTMLDivElement>, "ref"> & RefAttributes<HTMLDivElement>'.
+
+[0m [90m 177 |[39m                                 [33m<[39m[33mspan[39m[33m>[39m[35m82[39m[33m%[39m[33m<[39m[33m/[39m[33mspan[39m[33m>[39m
+ [90m 178 |[39m                             [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+[31m[1m>[22m[39m[90m 179 |[39m                             [33m<[39m[33mProgress[39m value[33m=[39m{[35m82[39m} className[33m=[39m[32m"bg-white/10"[39m indicatorClassName[33m=[39m[32m"bg-green-500"[39m [33m/[39m[33m>[39m
+ [90m     |[39m                                                                          [31m[1m^[22m[39m
+ [90m 180 |[39m                         [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 181 |[39m                     [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 182 |[39m                 [33m<[39m[33m/[39m[33mEndcoreCard[39m[33m>[39m[0m
+Next.js build worker exited with code: 1 and signal: null
