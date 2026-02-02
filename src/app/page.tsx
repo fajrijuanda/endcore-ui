@@ -1,3 +1,4 @@
+import { ThemeToggle } from "@/components/shared/ThemeToggle";
 import { EndcoreCard } from "@/components/ui/EndcoreCard";
 import { ArrowRight, Box, Hexagon, Layers } from "lucide-react";
 import Link from "next/link";
@@ -12,6 +13,11 @@ export default function LandingPage() {
         <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-primary/20 rounded-full blur-[150px] mix-blend-multiply dark:mix-blend-screen" />
         <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-blue-600/20 rounded-full blur-[150px] mix-blend-multiply dark:mix-blend-screen" />
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5 dark:opacity-10" />
+      </div>
+
+      {/* Theme Toggle */}
+      <div className="absolute top-6 right-6 z-50">
+        <ThemeToggle />
       </div>
 
 
@@ -35,10 +41,10 @@ export default function LandingPage() {
         </div>
 
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-white">
-          The <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-black dark:to-white">Endcore</span> UI.
+          The <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-black dark:to-white drop-shadow-sm">Endcore</span> UI.
         </h1>
 
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-lg text-zinc-600 dark:text-muted-foreground max-w-2xl mx-auto">
           A high-contrast, futuristic admin interface template inspired by tactical operations aesthetics.
           Built for speed, precision, and visual dominance.
         </p>
