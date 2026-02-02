@@ -47,6 +47,12 @@ export const Navbar = () => {
                     <Link href="#pricing" className="text-sm font-medium text-zinc-600 dark:text-muted-foreground hover:text-black dark:hover:text-primary transition-colors">
                         Pricing
                     </Link>
+                    <Link href="#reports" className="text-sm font-medium text-zinc-600 dark:text-muted-foreground hover:text-black dark:hover:text-primary transition-colors">
+                        Reports
+                    </Link>
+                    <Link href="#uplink" className="text-sm font-medium text-zinc-600 dark:text-muted-foreground hover:text-black dark:hover:text-primary transition-colors">
+                        Uplink
+                    </Link>
                 </div>
 
                 {/* Desktop Actions */}
@@ -90,6 +96,12 @@ export const Navbar = () => {
                             </Link>
                             <Link href="#pricing" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
                                 Pricing
+                            </Link>
+                            <Link href="#reports" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+                                Reports
+                            </Link>
+                            <Link href="#uplink" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+                                Uplink
                             </Link>
                             <div className="pt-4 border-t border-dashed border-zinc-200 dark:border-zinc-800">
                                 <Link href="/auth/login" className="w-full">

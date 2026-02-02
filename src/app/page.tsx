@@ -227,7 +227,7 @@ export default function LandingPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Plan 1 */}
-                <div className="bg-white/40 dark:bg-black/40 border border-zinc-200 dark:border-white/5 rounded-[2.5rem] p-8 backdrop-blur-md flex flex-col h-full relative group hover:border-primary/50 transition-all duration-300">
+                <div className="bg-white/40 dark:bg-black/40 border border-zinc-200 dark:border-white/5 rounded-[2.5rem] p-8 backdrop-blur-md flex flex-col h-full relative group hover:border-black dark:hover:border-primary transition-all duration-300">
                   <div className="mb-6">
                     <span className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-2 block">Level 1</span>
                     <h3 className="text-2xl font-black text-foreground">OPERATIVE</h3>
@@ -276,7 +276,7 @@ export default function LandingPage() {
                 </div>
 
                 {/* Plan 3 */}
-                <div className="bg-white/40 dark:bg-black/40 border border-zinc-200 dark:border-white/5 rounded-[2.5rem] p-8 backdrop-blur-md flex flex-col h-full relative group hover:border-primary/50 transition-all duration-300">
+                <div className="bg-white/40 dark:bg-black/40 border border-zinc-200 dark:border-white/5 rounded-[2.5rem] p-8 backdrop-blur-md flex flex-col h-full relative group hover:border-black dark:hover:border-primary transition-all duration-300">
                   <div className="mb-6">
                     <span className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-2 block">Level 3</span>
                     <h3 className="text-2xl font-black text-foreground">COMMAND</h3>
@@ -318,6 +318,136 @@ export default function LandingPage() {
               <div>
                 <div className="text-4xl font-black text-foreground mb-1">∞</div>
                 <div className="text-xs uppercase tracking-widest text-zinc-500">Scale</div>
+              </div>
+            </div>
+          </section>
+
+          {/* Testimonials Section */}
+          <section id="reports" className="py-20 px-6 border-t border-dashed border-zinc-200 dark:border-white/5">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <div className="flex items-center justify-center gap-2 mb-4">
+                  <div className="h-[1px] w-8 bg-zinc-300 dark:bg-primary/30" />
+                  <span className="text-[10px] px-3 py-1 bg-black text-primary dark:bg-primary/10 dark:text-primary rounded-full uppercase tracking-[0.4em] font-black">Feedback</span>
+                  <div className="h-[1px] w-8 bg-zinc-300 dark:bg-primary/30" />
+                </div>
+                <h2 className="text-4xl md:text-6xl font-black text-foreground mb-4">DEPLOYMENT REPORTS</h2>
+                <p className="text-zinc-500 dark:text-zinc-400 max-w-xl mx-auto">Field reports from operatives utilizing the Endcore protocol.</p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {[
+                  {
+                    uid: 'OP_882',
+                    clearance: 'Level 5',
+                    content: 'The architectural precision of Endcore UI allowed our team to deploy a high-frequency trading interface in record time. Dominant performance.',
+                    status: 'COMPLETED'
+                  },
+                  {
+                    uid: 'OP_341',
+                    clearance: 'Level 3',
+                    content: 'Visual clarity in high-stress operational environments is non-negotiable. Endcore delivers the tactical edge we needed.',
+                    status: 'SYNCHRONIZED'
+                  },
+                  {
+                    uid: 'OP_905',
+                    clearance: 'Level 4',
+                    content: 'Recursive components and tactical badges make it easy to build complex systems that remain intuitive for our field agents.',
+                    status: 'OPERATIONAL'
+                  }
+                ].map((testimonial, i) => (
+                  <EndcoreCard key={i} title={`TRANSMISSION_${testimonial.uid}`} status="active">
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between text-[10px] font-mono text-zinc-500">
+                        <span>CLEARANCE: {testimonial.clearance}</span>
+                        <span className="text-black dark:text-primary font-black">{testimonial.status}</span>
+                      </div>
+                      <p className="text-sm italic text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+                        &quot;{testimonial.content}&quot;
+                      </p>
+                      <div className="pt-4 border-t border-zinc-100 dark:border-white/5 flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-full bg-zinc-200 dark:bg-zinc-800 animate-pulse" />
+                        <div>
+                          <p className="text-xs font-bold text-foreground">OPERATIVE_{testimonial.uid}</p>
+                          <p className="text-[10px] text-zinc-500">SECURE_LINK_ENCRYPTED</p>
+                        </div>
+                      </div>
+                    </div>
+                  </EndcoreCard>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Contact Section */}
+          <section id="uplink" className="py-20 px-6 border-t border-dashed border-zinc-200 dark:border-white/5 bg-primary/5">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div className="space-y-8">
+                  <div>
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="text-[10px] px-3 py-1 bg-black text-primary dark:bg-primary/10 dark:text-primary rounded-full uppercase tracking-[0.4em] font-black">Connection</span>
+                    </div>
+                    <h2 className="text-4xl md:text-6xl font-black text-foreground mb-4">ESTABLISH UPLINK</h2>
+                    <p className="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed">
+                      Need specialized deployment assistance? Our systems architects are standing by for secure transmission.
+                    </p>
+                  </div>
+
+                  <div className="space-y-6">
+                    {[
+                      { label: 'HQ_LOCATION', value: 'GRID_SECTOR_7G' },
+                      { label: 'SIGNAL_TYPE', value: 'ECC_ENCRYPTED' },
+                      { label: 'AVAILABILITY', value: '24/7_RECURSIVE' }
+                    ].map((info, i) => (
+                      <div key={i} className="flex flex-col">
+                        <span className="text-[10px] font-mono text-zinc-400 mb-1">{info.label}</span>
+                        <span className="text-lg font-black text-foreground tracking-widest">{info.value}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="pt-8">
+                    <button className="flex items-center gap-3 text-sm font-bold text-black dark:text-primary group">
+                      <div className="w-10 h-10 rounded-full border border-zinc-200 dark:border-primary/30 flex items-center justify-center group-hover:bg-primary group-hover:text-black transition-all">
+                        <Github size={20} />
+                      </div>
+                      <span>SOURCE_CODE_ACCESS</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div className="bg-white dark:bg-black/40 border border-zinc-200 dark:border-white/5 rounded-[2.5rem] p-8 shadow-2xl backdrop-blur-xl">
+                  <form className="space-y-6">
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-black uppercase tracking-widest text-zinc-500">Operative Name</label>
+                      <input
+                        type="text"
+                        placeholder="IDENTIFY YOURSELF"
+                        className="w-full bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-white/10 rounded-xl px-4 py-3 text-sm font-mono focus:outline-none focus:border-primary transition-colors text-foreground"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-black uppercase tracking-widest text-zinc-500">Signal ID</label>
+                      <input
+                        type="email"
+                        placeholder="SECURE_EMAIL@UPLINK.NET"
+                        className="w-full bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-white/10 rounded-xl px-4 py-3 text-sm font-mono focus:outline-none focus:border-primary transition-colors text-foreground"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-black uppercase tracking-widest text-zinc-500">Transmission</label>
+                      <textarea
+                        rows={4}
+                        placeholder="ENTER DATA STREAM..."
+                        className="w-full bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-white/10 rounded-xl px-4 py-3 text-sm font-mono focus:outline-none focus:border-primary transition-colors text-foreground resize-none"
+                      />
+                    </div>
+                    <button className="w-full py-4 bg-primary text-black font-black rounded-full hover:shadow-[0_0_20px_rgba(255,215,0,0.4)] transition-all transform hover:-translate-y-1">
+                      SEND_TRANSMISSION
+                    </button>
+                  </form>
+                </div>
               </div>
             </div>
           </section>
