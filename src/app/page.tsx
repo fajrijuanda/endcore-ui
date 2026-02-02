@@ -2,6 +2,8 @@ import { EndcoreCard } from "@/components/ui/EndcoreCard";
 import { ArrowRight, Box, Hexagon, Layers } from "lucide-react";
 import Link from "next/link";
 
+import Image from "next/image";
+
 export default function LandingPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-[80vh] text-center space-y-12">
@@ -9,7 +11,13 @@ export default function LandingPage() {
       {/* Hero Section */}
       <section className="space-y-6 max-w-3xl mx-auto">
         <div className="flex justify-center mb-4">
-          <img src="/logo.png" alt="Endcore Logo" className="w-32 h-32 drop-shadow-[0_0_15px_rgba(255,255,0,0.5)]" />
+          <Image
+            src="/logo.png"
+            alt="Endcore Logo"
+            width={128}
+            height={128}
+            className="drop-shadow-[0_0_15px_rgba(255,255,0,0.5)]"
+          />
         </div>
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-primary">
           <span className="relative flex h-2 w-2">
