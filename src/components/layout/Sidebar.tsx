@@ -295,10 +295,8 @@ export default function Sidebar() {
                 collapsed ? "w-[80px]" : "w-[280px]"
             )}
             style={{
-                backgroundColor: 'hsl(var(--sidebar) / 0.8)',
+                backgroundColor: 'hsl(var(--sidebar))',
                 borderColor: 'var(--sidebar-border)',
-                backdropFilter: 'blur(20px) saturate(180%)',
-                WebkitBackdropFilter: 'blur(20px) saturate(180%)',
             }}
         >
             <div className={cn(
