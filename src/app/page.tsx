@@ -6,7 +6,14 @@ import Image from "next/image";
 
 export default function LandingPage() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[80vh] text-center space-y-12">
+    <div className="flex flex-col items-center justify-center min-h-[80vh] text-center space-y-12 relative overflow-hidden">
+      {/* Abstract Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-primary/20 rounded-full blur-[150px] mix-blend-multiply dark:mix-blend-screen" />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-blue-600/20 rounded-full blur-[150px] mix-blend-multiply dark:mix-blend-screen" />
+        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5 dark:opacity-10" />
+      </div>
+
 
       {/* Hero Section */}
       <section className="space-y-6 max-w-3xl mx-auto">
