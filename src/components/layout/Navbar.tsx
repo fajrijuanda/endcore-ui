@@ -30,7 +30,7 @@ export const Navbar = () => {
                             src="/logo.png"
                             alt="Endcore"
                             fill
-                            className="object-contain drop-shadow-[0_0_8px_rgba(255,215,0,0.5)]"
+                            className="object-contain drop-shadow-[0_0_8px_rgba(0,0,0,0.1)] dark:drop-shadow-[0_0_8px_rgba(255,215,0,0.5)]"
                         />
                     </div>
                     <span className="font-bold text-lg tracking-tight text-foreground">Endcore</span>

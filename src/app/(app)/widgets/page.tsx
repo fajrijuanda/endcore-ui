@@ -14,7 +14,7 @@ export default function WidgetsPage() {
     return (
         <div className="space-y-8">
             <div className="flex flex-col space-y-2">
-                <h1 className="text-3xl font-bold tracking-tight text-white">Widgets</h1>
+                <h1 className="text-3xl font-bold tracking-tight text-foreground">Widgets</h1>
                 <p className="text-muted-foreground">Composed components and ready-to-use interface modules.</p>
             </div>
 
@@ -27,12 +27,12 @@ export default function WidgetsPage() {
                             <AvatarFallback>OP</AvatarFallback>
                         </Avatar>
                         <div className="text-center">
-                            <h3 className="text-lg font-bold text-white">Alex Chen</h3>
+                            <h3 className="text-lg font-bold text-foreground">Alex Chen</h3>
                             <p className="text-sm text-muted-foreground">System Architect</p>
                         </div>
                         <div className="flex gap-2">
-                            <Badge variant="secondary" className="bg-primary/20 text-primary border-primary/50">Level 5</Badge>
-                            <Badge variant="outline" className="border-white/20 text-white">Verified</Badge>
+                            <Badge variant="secondary" className="bg-black text-primary dark:bg-primary/20 dark:text-primary border-primary/50">Level 5</Badge>
+                            <Badge variant="outline" className="border-zinc-200 dark:border-white/20 text-foreground">Verified</Badge>
                         </div>
                         <div className="w-full grid grid-cols-2 gap-2 mt-2">
                             <Button variant="outline" className="w-full border-white/10 hover:bg-white/5 hover:text-white">Message</Button>
@@ -46,7 +46,7 @@ export default function WidgetsPage() {
                     <div className="space-y-6">
                         <div className="flex items-center justify-between">
                             <div className="space-y-0.5">
-                                <Label className="text-white">Stealth Mode</Label>
+                                <Label className="text-foreground">Stealth Mode</Label>
                                 <div className="text-[10px] text-muted-foreground">Disable all external signals</div>
                             </div>
                             <Switch />
@@ -54,7 +54,7 @@ export default function WidgetsPage() {
                         <Separator className="bg-white/10" />
                         <div className="flex items-center justify-between">
                             <div className="space-y-0.5">
-                                <Label className="text-white">Auto-Deploy</Label>
+                                <Label className="text-foreground">Auto-Deploy</Label>
                                 <div className="text-[10px] text-muted-foreground">Deploy agents on breach</div>
                             </div>
                             <Switch defaultChecked />
@@ -62,7 +62,7 @@ export default function WidgetsPage() {
                         <Separator className="bg-white/10" />
                         <div className="flex items-center justify-between">
                             <div className="space-y-0.5">
-                                <Label className="text-white">Notifications</Label>
+                                <Label className="text-foreground">Notifications</Label>
                                 <div className="text-[10px] text-muted-foreground">Receive tactical alerts</div>
                             </div>
                             <Switch defaultChecked />
@@ -104,7 +104,7 @@ export default function WidgetsPage() {
                 <EndcoreCard title="Compacts" className="lg:col-span-3" status="critical">
                     <Card className="bg-transparent border-0 shadow-none p-0">
                         <CardHeader className="px-0 pt-0">
-                            <CardTitle className="text-lg text-white">Create Mission</CardTitle>
+                            <CardTitle className="text-lg text-foreground">Create Mission</CardTitle>
                             <CardDescription>Deploy a new recursive task.</CardDescription>
                         </CardHeader>
                         <CardContent className="px-0 space-y-3">

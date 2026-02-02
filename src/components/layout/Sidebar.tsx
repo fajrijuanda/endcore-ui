@@ -75,7 +75,7 @@ export default function Sidebar() {
                         exit={{ opacity: 0, x: -10 }}
                         className="font-bold text-xl tracking-tight text-foreground whitespace-nowrap"
                     >
-                        Endcore<span className="text-primary">UI</span>
+                        Endcore<span className="text-black dark:text-primary">UI</span>
                     </motion.div>
                 )}
             </div>
@@ -95,7 +95,7 @@ export default function Sidebar() {
                                     : "text-muted-foreground hover:bg-muted hover:text-foreground"
                             )}
                         >
-                            <item.icon size={22} className={cn("shrink-0", isActive ? "text-primary-foreground" : "text-muted-foreground group-hover:text-primary")} />
+                            <item.icon size={22} className={cn("shrink-0", isActive ? "text-primary-foreground" : "text-muted-foreground group-hover:text-black dark:group-hover:text-primary")} />
 
                             {!collapsed && (
                                 <span className="font-medium truncate">

@@ -1,7 +1,7 @@
 "use client"
 
 import { EndcoreCard } from "@/components/ui/EndcoreCard";
-import { ArrowUpRight, ArrowDownRight, DollarSign, CreditCard, Activity, ShoppingBag } from "lucide-react";
+import { ArrowUpRight, DollarSign, Activity } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function DashboardPage() {
@@ -55,8 +55,8 @@ export default function DashboardPage() {
                 <EndcoreCard title="Sales Trend (7 Days)" status="neutral" className="h-[300px] flex items-center justify-center">
                     <div className="text-muted-foreground text-sm flex flex-col items-center">
                         <svg className="w-full h-[200px]" viewBox="0 0 500 150" preserveAspectRatio="none">
-                            <path d="M0,140 C100,140 200,140 250,140 C300,10 350,140 500,140" fill="none" stroke="currentColor" strokeWidth="2" className="text-primary" />
-                            <path d="M0,140 C100,140 200,140 250,140 C300,10 350,140 500,140 L500,150 L0,150 Z" fill="url(#gradient)" className="opacity-20 text-primary" />
+                            <path d="M0,140 C100,140 200,140 250,140 C300,10 350,140 500,140" fill="none" stroke="currentColor" strokeWidth="2" className="text-black dark:text-primary" />
+                            <path d="M0,140 C100,140 200,140 250,140 C300,10 350,140 500,140 L500,150 L0,150 Z" fill="url(#gradient)" className="opacity-20 text-black dark:text-primary" />
                             <defs>
                                 <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
                                     <stop offset="0%" stopColor="currentColor" />
@@ -73,13 +73,13 @@ export default function DashboardPage() {
             <div className="space-y-4">
                 <div className="flex items-center justify-between">
                     <h2 className="text-xl font-bold">Recent Transactions</h2>
-                    <Button variant="ghost" className="text-primary text-sm">View All</Button>
+                    <Button variant="ghost" className="text-black dark:text-primary text-sm font-bold">View All</Button>
                 </div>
                 <div className="space-y-3">
                     {[1, 2].map((i) => (
                         <div key={i} className="flex items-center justify-between p-4 rounded-xl border border-white/5 bg-card hover:bg-muted/50 transition-colors">
                             <div className="flex items-center gap-4">
-                                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-black dark:text-primary">
                                     <DollarSign size={20} />
                                 </div>
                                 <div>

@@ -10,11 +10,7 @@ import {
   Shield,
   Globe,
   Github,
-  Zap,
-  Cpu,
-  Database,
   Activity,
-  BarChart3,
   Lock,
   CheckCircle2
 } from "lucide-react";
@@ -56,7 +52,7 @@ export default function LandingPage() {
               />
             </div>
 
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs font-bold text-black dark:text-primary uppercase tracking-wider backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black text-primary dark:bg-primary/10 dark:text-primary border border-primary/20 text-xs font-bold uppercase tracking-wider backdrop-blur-md">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
@@ -91,9 +87,9 @@ export default function LandingPage() {
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16 px-4">
                 <div className="flex items-center justify-center gap-2 mb-4">
-                  <div className="h-[2px] w-8 bg-primary/30" />
-                  <span className="text-[10px] uppercase tracking-[0.4em] font-black text-primary">Capabilities</span>
-                  <div className="h-[2px] w-8 bg-primary/30" />
+                  <div className="h-[1px] w-8 bg-zinc-300 dark:bg-primary/30" />
+                  <span className="text-[10px] px-3 py-1 bg-black text-primary dark:bg-primary/10 dark:text-primary rounded-full uppercase tracking-[0.4em] font-black">Capabilities</span>
+                  <div className="h-[1px] w-8 bg-zinc-300 dark:bg-primary/30" />
                 </div>
                 <h2 className="text-4xl md:text-6xl font-black text-foreground mb-4">TACTICAL MODULES</h2>
                 <p className="text-zinc-500 dark:text-zinc-400 max-w-xl mx-auto">Precision-engineered systems for high-performance operative workflows.</p>
@@ -144,9 +140,9 @@ export default function LandingPage() {
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
                 <div className="flex items-center justify-center gap-2 mb-4">
-                  <div className="h-[2px] w-8 bg-primary/30" />
-                  <span className="text-[10px] uppercase tracking-[0.4em] font-black text-primary">Showcase</span>
-                  <div className="h-[2px] w-8 bg-primary/30" />
+                  <div className="h-[1px] w-8 bg-zinc-300 dark:bg-primary/30" />
+                  <span className="text-[10px] px-3 py-1 bg-black text-primary dark:bg-primary/10 dark:text-primary rounded-full uppercase tracking-[0.4em] font-black">Showcase</span>
+                  <div className="h-[1px] w-8 bg-zinc-300 dark:bg-primary/30" />
                 </div>
                 <h2 className="text-4xl md:text-6xl font-black text-foreground mb-4">SYSTEM PREVIEW</h2>
                 <p className="text-zinc-500 dark:text-zinc-400 max-w-xl mx-auto">A glimpse into the command center interface and data visualizations.</p>
@@ -184,7 +180,7 @@ export default function LandingPage() {
                     </div>
                     <div>
                       <div className="text-[10px] text-zinc-500 dark:text-zinc-600 mb-1">PACKETS</div>
-                      <div className="text-sm font-bold text-foreground text-primary">OK_024</div>
+                      <div className="text-sm font-bold text-foreground">OK_<span className="text-black dark:text-primary">024</span></div>
                     </div>
                   </div>
                 </div>
@@ -193,14 +189,14 @@ export default function LandingPage() {
                 <div className="bg-white/40 dark:bg-black/40 border border-zinc-200 dark:border-white/5 rounded-[2rem] p-8 h-[400px] relative overflow-hidden backdrop-blur-md">
                   <div className="flex items-center justify-between mb-8">
                     <h3 className="text-xl font-black text-foreground">SECURITY_HUB</h3>
-                    <Lock className="w-6 h-6 text-primary" />
+                    <Lock className="w-6 h-6 text-black dark:text-primary" />
                   </div>
 
                   <div className="space-y-4">
                     {[
-                      { label: 'FIREWALL_PROTOCOL', status: 'PROTECTED', color: 'text-primary' },
+                      { label: 'FIREWALL_PROTOCOL', status: 'PROTECTED', color: 'text-black dark:text-primary font-black' },
                       { label: 'ENCRYPTION_LAYER', status: 'AES_256', color: 'text-foreground' },
-                      { label: 'SATELLITE_LINK', status: 'ACTIVE', color: 'text-primary' },
+                      { label: 'SATELLITE_LINK', status: 'ACTIVE', color: 'text-black dark:text-primary font-black' },
                       { label: 'THREAT_SCAN', status: 'NO_ENTRY', color: 'text-zinc-400' }
                     ].map((item, i) => (
                       <div key={i} className="flex items-center justify-between p-4 rounded-xl bg-black/5 dark:bg-black/20 border border-zinc-100 dark:border-white/5">
@@ -221,9 +217,9 @@ export default function LandingPage() {
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
                 <div className="flex items-center justify-center gap-2 mb-4">
-                  <div className="h-[2px] w-8 bg-primary/30" />
-                  <span className="text-[10px] uppercase tracking-[0.4em] font-black text-primary">Acquisition</span>
-                  <div className="h-[2px] w-8 bg-primary/30" />
+                  <div className="h-[1px] w-8 bg-zinc-300 dark:bg-primary/30" />
+                  <span className="text-[10px] px-3 py-1 bg-black text-primary dark:bg-primary/10 dark:text-primary rounded-full uppercase tracking-[0.4em] font-black">Acquisition</span>
+                  <div className="h-[1px] w-8 bg-zinc-300 dark:bg-primary/30" />
                 </div>
                 <h2 className="text-4xl md:text-6xl font-black text-foreground mb-4">SERVICE TIERS</h2>
                 <p className="text-zinc-500 dark:text-zinc-400 max-w-xl mx-auto">Scale your operations with precision engineered licensing models.</p>
@@ -241,7 +237,7 @@ export default function LandingPage() {
                   <ul className="flex-1 space-y-4 mb-8">
                     {['Single Project License', 'Core UI Components', 'Community Access', 'Manual Updates'].map((feature, i) => (
                       <li key={i} className="flex items-center gap-3 text-sm text-zinc-600 dark:text-zinc-400">
-                        <CheckCircle2 size={16} className="text-primary" />
+                        <CheckCircle2 size={16} className="text-black dark:text-primary" />
                         {feature}
                       </li>
                     ))}
@@ -290,7 +286,7 @@ export default function LandingPage() {
                   <ul className="flex-1 space-y-4 mb-8">
                     {['White-label Access', 'Direct Dev Communication', 'SLA Guarantee', 'Infrastructure Control', 'Source Code Access'].map((feature, i) => (
                       <li key={i} className="flex items-center gap-3 text-sm text-zinc-600 dark:text-zinc-400">
-                        <CheckCircle2 size={16} className="text-primary" />
+                        <CheckCircle2 size={16} className="text-black dark:text-primary" />
                         {feature}
                       </li>
                     ))}
