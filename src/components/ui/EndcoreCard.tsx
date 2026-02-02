@@ -19,7 +19,7 @@ export const EndcoreCard = ({ title, status = 'neutral', children, className, ac
 
     return (
         <div className={cn(
-            "group relative bg-white dark:bg-[#1A1A1A] border border-zinc-200 dark:border-white/5 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary/50 dark:hover:border-white/20 hover:shadow-lg dark:hover:bg-[#202020]",
+            "group relative bg-white dark:bg-[#1A1A1A] border border-zinc-200 dark:border-white/5 rounded-2xl overflow-hidden transition-all duration-300 hover:border-black/50 dark:hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_20px_rgba(255,215,0,0.1)] dark:hover:bg-[#202020]",
             className
         )}>
             {/* Decorative top-right cut */}

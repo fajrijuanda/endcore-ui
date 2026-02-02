@@ -149,8 +149,8 @@ export default function LandingPage() {
               © 2026 Endcore UI. All systems operational.
             </div>
             <div className="flex gap-4">
-              <Github className="w-5 h-5 text-zinc-400 hover:text-foreground cursor-pointer transition-colors" />
-              <Globe className="w-5 h-5 text-zinc-400 hover:text-foreground cursor-pointer transition-colors" />
+              <Github className="w-5 h-5 text-zinc-400 hover:text-black dark:hover:text-primary cursor-pointer transition-colors" />
+              <Globe className="w-5 h-5 text-zinc-400 hover:text-black dark:hover:text-primary cursor-pointer transition-colors" />
             </div>
           </div>
         </footer>
