@@ -36,7 +36,7 @@ export default function WidgetsPage() {
                         </div>
                         <div className="w-full grid grid-cols-2 gap-2 mt-2">
                             <Button variant="outline" className="w-full border-white/10 hover:bg-white/5 hover:text-white">Message</Button>
-                            <Button className="w-full bg-primary hover:bg-yellow-400 text-black font-bold">Assign</Button>
+                            <Button className="w-full bg-primary hover:bg-primary/90 text-black font-bold">Assign</Button>
                         </div>
                     </div>
                 </EndcoreCard>

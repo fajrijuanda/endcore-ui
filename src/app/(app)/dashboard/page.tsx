@@ -79,7 +79,7 @@ export default function DashboardPage() {
                     {[1, 2].map((i) => (
                         <div key={i} className="flex items-center justify-between p-4 rounded-xl border border-white/5 bg-card hover:bg-muted/50 transition-colors">
                             <div className="flex items-center gap-4">
-                                <div className="w-10 h-10 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-500">
+                                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                                     <DollarSign size={20} />
                                 </div>
                                 <div>

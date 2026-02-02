@@ -16,7 +16,7 @@ export default function LandingPage() {
             alt="Endcore Logo"
             width={128}
             height={128}
-            className="drop-shadow-[0_0_15px_rgba(255,255,0,0.5)]"
+            className="drop-shadow-[0_0_15px_rgba(255,215,0,0.5)]"
           />
         </div>
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-primary">
@@ -37,7 +37,7 @@ export default function LandingPage() {
         </p>
 
         <div className="flex items-center justify-center gap-4">
-          <Link href="/dashboard" className="bg-primary text-black font-bold px-8 py-3 rounded-full hover:bg-yellow-400 transition-all flex items-center gap-2">
+          <Link href="/dashboard" className="bg-primary text-black font-bold px-8 py-3 rounded-full hover:bg-primary/90 transition-all flex items-center gap-2">
             Enter Hub <ArrowRight size={18} />
           </Link>
           <Link href="/auth/login" className="bg-white/10 text-white font-medium px-8 py-3 rounded-full hover:bg-white/20 transition-all border border-white/5">
@@ -57,7 +57,7 @@ export default function LandingPage() {
 
         <EndcoreCard title="Tactical Design" status="warning">
           <div className="flex flex-col items-center gap-4 py-6">
-            <Hexagon className="text-orange-500 w-12 h-12" />
+            <Hexagon className="text-primary w-12 h-12" />
             <p className="text-sm text-center text-muted-foreground">High-contrast yellow & black palette designed for maximum readability.</p>
           </div>
         </EndcoreCard>

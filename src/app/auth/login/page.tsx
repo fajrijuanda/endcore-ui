@@ -38,7 +38,7 @@ export default function LoginPage() {
                         />
                     </div>
 
-                    <button type="button" className="w-full bg-primary hover:bg-yellow-400 text-black font-bold py-3 rounded-xl transition-all shadow-[0_0_15px_rgba(255,255,0,0.3)] hover:shadow-[0_0_25px_rgba(255,255,0,0.5)]">
+                    <button type="button" className="w-full bg-primary hover:bg-primary/90 text-black font-bold py-3 rounded-xl transition-all shadow-[0_0_15px_rgba(255,215,0,0.3)] hover:shadow-[0_0_25px_rgba(255,215,0,0.5)]">
                         Authenticate
                     </button>
                 </form>

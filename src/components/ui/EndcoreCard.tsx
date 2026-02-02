@@ -12,7 +12,7 @@ interface EndcoreCardProps {
 export const EndcoreCard = ({ title, status = 'neutral', children, className, action }: EndcoreCardProps) => {
     const statusColor = {
         active: 'bg-primary shadow-[0_0_10px_rgba(255,255,0,0.5)]',
-        warning: 'bg-orange-500 shadow-[0_0_10px_rgba(249,115,22,0.5)]',
+        warning: 'bg-primary shadow-[0_0_10px_rgba(255,215,0,0.5)]',
         critical: 'bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.5)]',
         neutral: 'bg-white/20',
     };
