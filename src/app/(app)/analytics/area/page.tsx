@@ -56,61 +56,71 @@ export default function AreaChartPage() {
             </div>
 
             {/* Main Area Chart */}
-            <EndcoreCard title="Synchronization_Telemetry" status="active" className="h-[500px]">
-                <div className="w-full h-full p-4">
-                    <ResponsiveContainer width="100%" height="100%">
-                        <ReAreaChart
-                            data={data}
-                            margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
-                        >
-                            <defs>
-                                <linearGradient id="colorStrength" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="5%" stopColor="hsl(var(--primary))" stopOpacity={0.3} />
-                                    <stop offset="95%" stopColor="hsl(var(--primary))" stopOpacity={0} />
-                                </linearGradient>
-                            </defs>
-                            <CartesianGrid
-                                strokeDasharray="3 3"
-                                vertical={false}
-                                stroke="currentColor"
-                                className="text-zinc-200 dark:text-zinc-800"
-                            />
-                            <XAxis
-                                dataKey="time"
-                                axisLine={false}
-                                tickLine={false}
-                                tick={{ fontSize: 10, fontWeight: 700, fill: 'currentColor' }}
-                                className="text-zinc-400"
-                            />
-                            <YAxis
-                                axisLine={false}
-                                tickLine={false}
-                                tick={{ fontSize: 10, fontWeight: 700, fill: 'currentColor' }}
-                                className="text-zinc-400"
-                            />
-                            <Tooltip
-                                contentStyle={{
-                                    backgroundColor: 'black',
-                                    border: 'none',
-                                    borderRadius: '12px',
-                                    fontSize: '12px',
-                                    color: 'white',
-                                    fontWeight: '900'
-                                }}
-                                itemStyle={{ color: 'hsl(var(--primary))' }}
-                            />
-                            <Area
-                                type="monotone"
-                                dataKey="strength"
-                                stroke="hsl(var(--primary))"
-                                strokeWidth={3}
-                                fillOpacity={1}
-                                fill="url(#colorStrength)"
-                            />
-                        </ReAreaChart>
-                    </ResponsiveContainer>
-                </div>
-            </EndcoreCard>
+            <div className="grid grid-cols-1 gap-8">
+                <EndcoreCard title="Synchronization_Telemetry" status="active" className="h-[500px]">
+                    <div className="w-full h-full">
+                        <ResponsiveContainer width="100%" height="100%">
+                            <ReAreaChart
+                                data={data}
+                                margin={{ top: 20, right: 30, left: 10, bottom: 0 }}
+                            >
+                                <defs>
+                                    <linearGradient id="colorStrength" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="5%" stopColor="hsl(var(--primary))" stopOpacity={0.3} />
+                                        <stop offset="95%" stopColor="hsl(var(--primary))" stopOpacity={0} />
+                                    </linearGradient>
+                                </defs>
+                                <CartesianGrid
+                                    strokeDasharray="3 3"
+                                    vertical={false}
+                                    stroke="currentColor"
+                                    className="text-zinc-200 dark:text-zinc-800"
+                                />
+                                <XAxis
+                                    dataKey="time"
+                                    axisLine={false}
+                                    tickLine={false}
+                                    tick={{ fontSize: 10, fontWeight: 700, fill: 'currentColor' }}
+                                    className="text-zinc-400"
+                                />
+                                <YAxis
+                                    axisLine={false}
+                                    tickLine={false}
+                                    tick={{ fontSize: 10, fontWeight: 700, fill: 'currentColor' }}
+                                    className="text-zinc-400"
+                                />
+                                <Tooltip
+                                    contentStyle={{
+                                        backgroundColor: 'black',
+                                        border: 'none',
+                                        borderRadius: '12px',
+                                        fontSize: '12px',
+                                        color: 'white',
+                                        fontWeight: '900'
+                                    }}
+                                    itemStyle={{ color: 'hsl(var(--primary))' }}
+                                />
+                                <Area
+                                    type="monotone"
+                                    dataKey="strength"
+                                    stroke="hsl(var(--primary))"
+                                    strokeWidth={4}
+                                    fillOpacity={1}
+                                    fill="url(#colorStrength)"
+                                />
+                                <Area
+                                    type="monotone"
+                                    dataKey="jitter"
+                                    stroke="currentColor"
+                                    strokeWidth={1}
+                                    fill="transparent"
+                                    className="text-zinc-400 opacity-20"
+                                />
+                            </ReAreaChart>
+                        </ResponsiveContainer>
+                    </div>
+                </EndcoreCard>
+            </div>
 
             {/* Decorative Grid Background */}
             <div className="fixed inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.07] z-[-1] overflow-hidden">
